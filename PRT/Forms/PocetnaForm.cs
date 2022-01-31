@@ -12,11 +12,12 @@ namespace PRT.Forms
 {
     public partial class PocetnaForm : Form
     {
-        public PocetnaForm()
+        private majka prijavljenaMajka;
+        public PocetnaForm(majka prijavljenaMajka)
         {
             InitializeComponent();
+            this.prijavljenaMajka = prijavljenaMajka;
         }
-
         private void PocetnaForm_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -34,7 +35,7 @@ namespace PRT.Forms
 
         private void evidencijaOpsegaButton_Click(object sender, EventArgs e)
         {
-            EvidencijaOpsegaForm evidencijaOpsegaForm = new EvidencijaOpsegaForm();
+            EvidencijaOpsegaForm evidencijaOpsegaForm = new EvidencijaOpsegaForm(prijavljenaMajka);
             evidencijaOpsegaForm.ShowDialog();
         }
 

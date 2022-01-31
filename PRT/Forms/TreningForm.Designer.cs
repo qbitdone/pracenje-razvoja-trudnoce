@@ -55,7 +55,7 @@ namespace PRT.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(26, 199);
+            this.label1.Location = new System.Drawing.Point(26, 191);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 27;

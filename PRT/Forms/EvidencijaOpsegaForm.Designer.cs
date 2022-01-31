@@ -29,12 +29,17 @@ namespace PRT.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EvidencijaOpsegaForm));
             this.dodajZapisButton = new System.Windows.Forms.Button();
             this.obrisiZapisButton = new System.Windows.Forms.Button();
             this.prikazOpsegaDataGridView = new System.Windows.Forms.DataGridView();
             this.moTrackerLabel = new System.Windows.Forms.Label();
+            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opsegDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zapisopsegaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.prikazOpsegaDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zapisopsegaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dodajZapisButton
@@ -57,12 +62,21 @@ namespace PRT.Forms
             this.obrisiZapisButton.TabIndex = 9;
             this.obrisiZapisButton.Text = "Obriši Zapis";
             this.obrisiZapisButton.UseVisualStyleBackColor = false;
+            this.obrisiZapisButton.Click += new System.EventHandler(this.obrisiZapisButton_Click);
             // 
             // prikazOpsegaDataGridView
             // 
+            this.prikazOpsegaDataGridView.AllowUserToAddRows = false;
+            this.prikazOpsegaDataGridView.AllowUserToDeleteRows = false;
+            this.prikazOpsegaDataGridView.AutoGenerateColumns = false;
             this.prikazOpsegaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.prikazOpsegaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.datumDataGridViewTextBoxColumn,
+            this.opsegDataGridViewTextBoxColumn});
+            this.prikazOpsegaDataGridView.DataSource = this.zapisopsegaBindingSource;
             this.prikazOpsegaDataGridView.Location = new System.Drawing.Point(38, 106);
             this.prikazOpsegaDataGridView.Name = "prikazOpsegaDataGridView";
+            this.prikazOpsegaDataGridView.ReadOnly = true;
             this.prikazOpsegaDataGridView.Size = new System.Drawing.Size(300, 150);
             this.prikazOpsegaDataGridView.TabIndex = 8;
             // 
@@ -76,6 +90,24 @@ namespace PRT.Forms
             this.moTrackerLabel.Size = new System.Drawing.Size(363, 64);
             this.moTrackerLabel.TabIndex = 7;
             this.moTrackerLabel.Text = "Evidencija Opsega";
+            // 
+            // datumDataGridViewTextBoxColumn
+            // 
+            this.datumDataGridViewTextBoxColumn.DataPropertyName = "datum";
+            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
+            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
+            this.datumDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // opsegDataGridViewTextBoxColumn
+            // 
+            this.opsegDataGridViewTextBoxColumn.DataPropertyName = "opseg";
+            this.opsegDataGridViewTextBoxColumn.HeaderText = "Opseg";
+            this.opsegDataGridViewTextBoxColumn.Name = "opsegDataGridViewTextBoxColumn";
+            this.opsegDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // zapisopsegaBindingSource
+            // 
+            this.zapisopsegaBindingSource.DataSource = typeof(PRT.zapis_opsega);
             // 
             // EvidencijaOpsegaForm
             // 
@@ -91,6 +123,7 @@ namespace PRT.Forms
             this.Text = "moTracker";
             this.Load += new System.EventHandler(this.EvidencijaOpsegaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.prikazOpsegaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zapisopsegaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +135,8 @@ namespace PRT.Forms
         private System.Windows.Forms.Button obrisiZapisButton;
         private System.Windows.Forms.DataGridView prikazOpsegaDataGridView;
         private System.Windows.Forms.Label moTrackerLabel;
+        private System.Windows.Forms.BindingSource zapisopsegaBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn opsegDataGridViewTextBoxColumn;
     }
 }

@@ -48,5 +48,10 @@ namespace PRT
         public virtual ICollection<zapis_opsega> zapis_opsega { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<zapis_tezine> zapis_tezine { get; set; }
+
+        public override string ToString()
+        {
+            return ime + " " + " " + prezime;
+        }
     }
 }

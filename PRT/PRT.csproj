@@ -160,11 +160,11 @@
     <Compile Include="Forms\TezinaForm.Designer.cs">
       <DependentUpon>TezinaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LoginForm.cs">
+    <Compile Include="Forms\PrijavaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="Forms\PrijavaForm.Designer.cs">
+      <DependentUpon>PrijavaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\PocetnaForm.cs">
       <SubType>Form</SubType>
@@ -264,8 +264,8 @@
     <EmbeddedResource Include="Forms\TezinaForm.resx">
       <DependentUpon>TezinaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\PrijavaForm.resx">
+      <DependentUpon>PrijavaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PocetnaForm.resx">
       <DependentUpon>PocetnaForm.cs</DependentUpon>
@@ -293,6 +293,7 @@
     <None Include="PregnancyModel.edmx.diagram">
       <DependentUpon>PregnancyModel.edmx</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\zapis_opsega.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

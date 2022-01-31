@@ -63,6 +63,7 @@ namespace PRT.Forms
             this.spremiButton.TabIndex = 12;
             this.spremiButton.Text = "Spremi";
             this.spremiButton.UseVisualStyleBackColor = false;
+            this.spremiButton.Click += new System.EventHandler(this.spremiButton_Click);
             // 
             // odustaniButton
             // 

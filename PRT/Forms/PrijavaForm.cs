@@ -32,9 +32,26 @@ namespace PRT
 
         private void prijavaButton_Click(object sender, EventArgs e)
         {
-            PocetnaForm pocetna = new PocetnaForm();
-            this.Hide();
-            pocetna.ShowDialog();
+            using (var contex = new pregnancydbEntities())
+            {
+                string email = emailTextBox.Text;
+                string lozinka = passwordTextBox.Text;
+
+                var prijava = from k in contex.majka
+                              where k.email == email && k.lozinka == lozinka
+                              select k;
+                if (prijava.Count() == 0)
+                {
+                    MessageBox.Show("Neuspješna prijava");
+                } 
+                else
+                {
+                    PocetnaForm pocetna = new PocetnaForm(prijava.First());
+                    this.Hide();
+                    pocetna.ShowDialog();
+                }
+            }
+
         }
     }
 }
