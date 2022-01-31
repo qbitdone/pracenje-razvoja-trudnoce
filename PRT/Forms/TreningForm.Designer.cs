@@ -37,6 +37,8 @@ namespace PRT.Forms
             this.odustaniButton = new System.Windows.Forms.Button();
             this.moTrackerLabel = new System.Windows.Forms.Label();
             this.sazetakTextBox = new System.Windows.Forms.RichTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.datumDTP = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label2
@@ -53,7 +55,7 @@ namespace PRT.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(26, 173);
+            this.label1.Location = new System.Drawing.Point(26, 199);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 27;
@@ -101,11 +103,28 @@ namespace PRT.Forms
             // 
             // sazetakTextBox
             // 
-            this.sazetakTextBox.Location = new System.Drawing.Point(117, 160);
+            this.sazetakTextBox.Location = new System.Drawing.Point(117, 186);
             this.sazetakTextBox.Name = "sazetakTextBox";
             this.sazetakTextBox.Size = new System.Drawing.Size(179, 157);
             this.sazetakTextBox.TabIndex = 28;
             this.sazetakTextBox.Text = "";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(26, 164);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 13);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Datum Treninga";
+            // 
+            // datumDTP
+            // 
+            this.datumDTP.Location = new System.Drawing.Point(117, 160);
+            this.datumDTP.Name = "datumDTP";
+            this.datumDTP.Size = new System.Drawing.Size(179, 20);
+            this.datumDTP.TabIndex = 29;
             // 
             // TreningForm
             // 
@@ -113,7 +132,9 @@ namespace PRT.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(356, 430);
+            this.Controls.Add(this.datumDTP);
             this.Controls.Add(this.sazetakTextBox);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.vrstaTreningaComboBox);
@@ -137,5 +158,7 @@ namespace PRT.Forms
         private System.Windows.Forms.Button odustaniButton;
         private System.Windows.Forms.Label moTrackerLabel;
         private System.Windows.Forms.RichTextBox sazetakTextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker datumDTP;
     }
 }
