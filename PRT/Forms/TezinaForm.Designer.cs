@@ -98,7 +98,7 @@ namespace PRT.Forms
             this.Controls.Add(this.odustaniButton);
             this.Controls.Add(this.moTrackerLabel);
             this.Name = "TezinaForm";
-            this.Text = "Form1";
+            this.Text = "moTracker";
             this.Load += new System.EventHandler(this.TezinaForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

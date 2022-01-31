@@ -55,7 +55,7 @@ namespace PRT.Forms
             // evidencijaTezineButton
             // 
             this.evidencijaTezineButton.BackColor = System.Drawing.Color.White;
-            this.evidencijaTezineButton.Location = new System.Drawing.Point(163, 208);
+            this.evidencijaTezineButton.Location = new System.Drawing.Point(472, 135);
             this.evidencijaTezineButton.Name = "evidencijaTezineButton";
             this.evidencijaTezineButton.Size = new System.Drawing.Size(136, 54);
             this.evidencijaTezineButton.TabIndex = 3;
@@ -66,7 +66,7 @@ namespace PRT.Forms
             // evidencijaOpsegaButton
             // 
             this.evidencijaOpsegaButton.BackColor = System.Drawing.Color.White;
-            this.evidencijaOpsegaButton.Location = new System.Drawing.Point(331, 208);
+            this.evidencijaOpsegaButton.Location = new System.Drawing.Point(199, 135);
             this.evidencijaOpsegaButton.Name = "evidencijaOpsegaButton";
             this.evidencijaOpsegaButton.Size = new System.Drawing.Size(136, 54);
             this.evidencijaOpsegaButton.TabIndex = 4;
@@ -77,7 +77,7 @@ namespace PRT.Forms
             // informacijeOBebamaButton
             // 
             this.informacijeOBebamaButton.BackColor = System.Drawing.Color.White;
-            this.informacijeOBebamaButton.Location = new System.Drawing.Point(502, 208);
+            this.informacijeOBebamaButton.Location = new System.Drawing.Point(199, 212);
             this.informacijeOBebamaButton.Name = "informacijeOBebamaButton";
             this.informacijeOBebamaButton.Size = new System.Drawing.Size(136, 54);
             this.informacijeOBebamaButton.TabIndex = 4;
@@ -88,7 +88,7 @@ namespace PRT.Forms
             // dodatciPrehraniButton
             // 
             this.dodatciPrehraniButton.BackColor = System.Drawing.Color.White;
-            this.dodatciPrehraniButton.Location = new System.Drawing.Point(320, 288);
+            this.dodatciPrehraniButton.Location = new System.Drawing.Point(472, 212);
             this.dodatciPrehraniButton.Name = "dodatciPrehraniButton";
             this.dodatciPrehraniButton.Size = new System.Drawing.Size(136, 54);
             this.dodatciPrehraniButton.TabIndex = 4;
@@ -99,7 +99,7 @@ namespace PRT.Forms
             // treningButton
             // 
             this.treningButton.BackColor = System.Drawing.Color.White;
-            this.treningButton.Location = new System.Drawing.Point(491, 288);
+            this.treningButton.Location = new System.Drawing.Point(472, 289);
             this.treningButton.Name = "treningButton";
             this.treningButton.Size = new System.Drawing.Size(136, 54);
             this.treningButton.TabIndex = 4;
@@ -110,7 +110,7 @@ namespace PRT.Forms
             // doktorButton
             // 
             this.doktorButton.BackColor = System.Drawing.Color.White;
-            this.doktorButton.Location = new System.Drawing.Point(320, 366);
+            this.doktorButton.Location = new System.Drawing.Point(199, 366);
             this.doktorButton.Name = "doktorButton";
             this.doktorButton.Size = new System.Drawing.Size(136, 54);
             this.doktorButton.TabIndex = 4;
@@ -121,7 +121,7 @@ namespace PRT.Forms
             // pregledButton
             // 
             this.pregledButton.BackColor = System.Drawing.Color.White;
-            this.pregledButton.Location = new System.Drawing.Point(491, 366);
+            this.pregledButton.Location = new System.Drawing.Point(472, 366);
             this.pregledButton.Name = "pregledButton";
             this.pregledButton.Size = new System.Drawing.Size(136, 54);
             this.pregledButton.TabIndex = 4;
@@ -132,7 +132,7 @@ namespace PRT.Forms
             // dnevnikButton
             // 
             this.dnevnikButton.BackColor = System.Drawing.Color.White;
-            this.dnevnikButton.Location = new System.Drawing.Point(173, 288);
+            this.dnevnikButton.Location = new System.Drawing.Point(199, 289);
             this.dnevnikButton.Name = "dnevnikButton";
             this.dnevnikButton.Size = new System.Drawing.Size(136, 54);
             this.dnevnikButton.TabIndex = 4;
