@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="pregnancydbModelStoreContainer" CdmEntityContainer="pregnancydbEntities">
+    <EntitySetMapping Name="beba">
+      <EntityTypeMapping TypeName="pregnancydbModel.beba">
+        <MappingFragment StoreEntitySet="beba">
+          <ScalarProperty Name="id_beba" ColumnName="id_beba" />
+          <ScalarProperty Name="id_majka" ColumnName="id_majka" />
+          <ScalarProperty Name="ime" ColumnName="ime" />
+          <ScalarProperty Name="prezime" ColumnName="prezime" />
+          <ScalarProperty Name="spol" ColumnName="spol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dnevnik">
+      <EntityTypeMapping TypeName="pregnancydbModel.dnevnik">
+        <MappingFragment StoreEntitySet="dnevnik">
+          <ScalarProperty Name="id_dnevnik" ColumnName="id_dnevnik" />
+          <ScalarProperty Name="id_majka" ColumnName="id_majka" />
+          <ScalarProperty Name="naslov" ColumnName="naslov" />
+          <ScalarProperty Name="sadrzaj" ColumnName="sadrzaj" />
+          <ScalarProperty Name="datum_zapisa" ColumnName="datum_zapisa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dodatak_prehrani">
+      <EntityTypeMapping TypeName="pregnancydbModel.dodatak_prehrani">
+        <MappingFragment StoreEntitySet="dodatak_prehrani">
+          <ScalarProperty Name="id_dodatak" ColumnName="id_dodatak" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doktor">
+      <EntityTypeMapping TypeName="pregnancydbModel.doktor">
+        <MappingFragment StoreEntitySet="doktor">
+          <ScalarProperty Name="id_doktor" ColumnName="id_doktor" />
+          <ScalarProperty Name="ime" ColumnName="ime" />
+          <ScalarProperty Name="prezime" ColumnName="prezime" />
+          <ScalarProperty Name="mjesto" ColumnName="mjesto" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+          <ScalarProperty Name="broj_telefona" ColumnName="broj_telefona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="majka">
+      <EntityTypeMapping TypeName="pregnancydbModel.majka">
+        <MappingFragment StoreEntitySet="majka">
+          <ScalarProperty Name="id_majka" ColumnName="id_majka" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="lozinka" ColumnName="lozinka" />
+          <ScalarProperty Name="ime" ColumnName="ime" />
+          <ScalarProperty Name="prezime" ColumnName="prezime" />
+          <ScalarProperty Name="godine" ColumnName="godine" />
+          <ScalarProperty Name="mjesto" ColumnName="mjesto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="majka_dodatak_prehrani">
+      <EntityTypeMapping TypeName="pregnancydbModel.majka_dodatak_prehrani">
+        <MappingFragment StoreEntitySet="majka_dodatak_prehrani">
+          <ScalarProperty Name="id_majka_dodatak" ColumnName="id_majka_dodatak" />
+          <ScalarProperty Name="id_majka" ColumnName="id_majka" />
+          <ScalarProperty Name="id_dodatak" ColumnName="id_dodatak" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+          <ScalarProperty Name="datum_uzimanja" ColumnName="datum_uzimanja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="majka_doktor">
+      <EntityTypeMapping TypeName="pregnancydbModel.majka_doktor">
+        <MappingFragment StoreEntitySet="majka_doktor">
+          <ScalarProperty Name="id_majka_doktor" ColumnName="id_majka_doktor" />
+          <ScalarProperty Name="id_doktor" ColumnName="id_doktor" />
+          <ScalarProperty Name="id_majka" ColumnName="id_majka" />
+          <ScalarProperty Name="datum_pocetak" ColumnName="datum_pocetak" />
+          <ScalarProperty Name="datum_kraj" ColumnName="datum_kraj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pregled">
+      <EntityTypeMapping TypeName="pregnancydbModel.pregled">
+        <MappingFragment StoreEntitySet="pregled">
+          <ScalarProperty Name="id_pregled" ColumnName="id_pregled" />
+          <ScalarProperty Name="id_majka_doktor" ColumnName="id_majka_doktor" />
+          <ScalarProperty Name="datum_pregleda" ColumnName="datum_pregleda" />
+          <ScalarProperty Name="sazetak" ColumnName="sazetak" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="trening">
+      <EntityTypeMapping TypeName="pregnancydbModel.trening">
+        <MappingFragment StoreEntitySet="trening">
+          <ScalarProperty Name="id_trening" ColumnName="id_trening" />
+          <ScalarProperty Name="id_vrsta" ColumnName="id_vrsta" />
+          <ScalarProperty Name="id_majka" ColumnName="id_majka" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="biljeske" ColumnName="biljeske" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vrsta_treninga">
+      <EntityTypeMapping TypeName="pregnancydbModel.vrsta_treninga">
+        <MappingFragment StoreEntitySet="vrsta_treninga">
+          <ScalarProperty Name="id_vrsta" ColumnName="id_vrsta" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zapis_opsega">
+      <EntityTypeMapping TypeName="pregnancydbModel.zapis_opsega">
+        <MappingFragment StoreEntitySet="zapis_opsega">
+          <ScalarProperty Name="id_zapis_opsega" ColumnName="id_zapis_opsega" />
+          <ScalarProperty Name="id_majka" ColumnName="id_majka" />
+          <ScalarProperty Name="opseg" ColumnName="opseg" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zapis_tezine">
+      <EntityTypeMapping TypeName="pregnancydbModel.zapis_tezine">
+        <MappingFragment StoreEntitySet="zapis_tezine">
+          <ScalarProperty Name="id_zapis_tezine" ColumnName="id_zapis_tezine" />
+          <ScalarProperty Name="id_majka" ColumnName="id_majka" />
+          <ScalarProperty Name="tezina" ColumnName="tezina" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

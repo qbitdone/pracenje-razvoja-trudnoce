@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pregnancydbModel.Store" Provider="Devart.Data.PostgreSql" ProviderManifestToken="PostgreSQL, 14.1.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="beba">
+    <Key>
+      <PropertyRef Name="id_beba" />
+    </Key>
+    <Property Name="id_beba" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_majka" Type="int" Nullable="false" />
+    <Property Name="ime" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="prezime" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="spol" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dnevnik">
+    <Key>
+      <PropertyRef Name="id_dnevnik" />
+    </Key>
+    <Property Name="id_dnevnik" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_majka" Type="int" Nullable="false" />
+    <Property Name="naslov" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sadrzaj" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="datum_zapisa" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dodatak_prehrani">
+    <Key>
+      <PropertyRef Name="id_dodatak" />
+    </Key>
+    <Property Name="id_dodatak" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="doktor">
+    <Key>
+      <PropertyRef Name="id_doktor" />
+    </Key>
+    <Property Name="id_doktor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ime" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="prezime" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mjesto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="adresa" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="broj_telefona" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="majka">
+    <Key>
+      <PropertyRef Name="id_majka" />
+    </Key>
+    <Property Name="id_majka" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="lozinka" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ime" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="prezime" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="godine" Type="int" Nullable="false" />
+    <Property Name="mjesto" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="majka_dodatak_prehrani">
+    <Key>
+      <PropertyRef Name="id_majka_dodatak" />
+    </Key>
+    <Property Name="id_majka_dodatak" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_majka" Type="int" Nullable="false" />
+    <Property Name="id_dodatak" Type="int" Nullable="false" />
+    <Property Name="kolicina" Type="int" Nullable="false" />
+    <Property Name="datum_uzimanja" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="majka_doktor">
+    <Key>
+      <PropertyRef Name="id_majka_doktor" />
+    </Key>
+    <Property Name="id_majka_doktor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_doktor" Type="int" Nullable="false" />
+    <Property Name="id_majka" Type="int" Nullable="false" />
+    <Property Name="datum_pocetak" Type="date" Nullable="false" />
+    <Property Name="datum_kraj" Type="date" />
+  </EntityType>
+  <EntityType Name="pregled">
+    <Key>
+      <PropertyRef Name="id_pregled" />
+    </Key>
+    <Property Name="id_pregled" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_majka_doktor" Type="int" Nullable="false" />
+    <Property Name="datum_pregleda" Type="date" Nullable="false" />
+    <Property Name="sazetak" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="trening">
+    <Key>
+      <PropertyRef Name="id_trening" />
+    </Key>
+    <Property Name="id_trening" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_vrsta" Type="int" Nullable="false" />
+    <Property Name="id_majka" Type="int" Nullable="false" />
+    <Property Name="datum" Type="date" Nullable="false" />
+    <Property Name="biljeske" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vrsta_treninga">
+    <Key>
+      <PropertyRef Name="id_vrsta" />
+    </Key>
+    <Property Name="id_vrsta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="zapis_opsega">
+    <Key>
+      <PropertyRef Name="id_zapis_opsega" />
+    </Key>
+    <Property Name="id_zapis_opsega" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_majka" Type="int" Nullable="false" />
+    <Property Name="opseg" Type="double precision" Nullable="false" />
+    <Property Name="datum" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="zapis_tezine">
+    <Key>
+      <PropertyRef Name="id_zapis_tezine" />
+    </Key>
+    <Property Name="id_zapis_tezine" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_majka" Type="int" Nullable="false" />
+    <Property Name="tezina" Type="double precision" Nullable="false" />
+    <Property Name="datum" Type="date" Nullable="false" />
+  </EntityType>
+  <Association Name="public_beba_majka_id_majka_fk">
+    <End Role="majka" Type="Self.majka" Multiplicity="1" />
+    <End Role="beba" Type="Self.beba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="majka">
+        <PropertyRef Name="id_majka" />
+      </Principal>
+      <Dependent Role="beba">
+        <PropertyRef Name="id_majka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="public_dnevnik_majka_id_majka_fk">
+    <End Role="majka" Type="Self.majka" Multiplicity="1" />
+    <End Role="dnevnik" Type="Self.dnevnik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="majka">
+        <PropertyRef Name="id_majka" />
+      </Principal>
+      <Dependent Role="dnevnik">
+        <PropertyRef Name="id_majka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="public_majka_dodatak_prehrani_dodatak_id">
+    <End Role="dodatak_prehrani" Type="Self.dodatak_prehrani" Multiplicity="1" />
+    <End Role="majka_dodatak_prehrani" Type="Self.majka_dodatak_prehrani" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dodatak_prehrani">
+        <PropertyRef Name="id_dodatak" />
+      </Principal>
+      <Dependent Role="majka_dodatak_prehrani">
+        <PropertyRef Name="id_dodatak" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="public_majka_dodatak_prehrani_majka_id">
+    <End Role="majka" Type="Self.majka" Multiplicity="1" />
+    <End Role="majka_dodatak_prehrani" Type="Self.majka_dodatak_prehrani" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="majka">
+        <PropertyRef Name="id_majka" />
+      </Principal>
+      <Dependent Role="majka_dodatak_prehrani">
+        <PropertyRef Name="id_majka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="public_majka_doktor_id_doktor">
+    <End Role="doktor" Type="Self.doktor" Multiplicity="1" />
+    <End Role="majka_doktor" Type="Self.majka_doktor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doktor">
+        <PropertyRef Name="id_doktor" />
+      </Principal>
+      <Dependent Role="majka_doktor">
+        <PropertyRef Name="id_doktor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="public_majka_doktor_id_majka">
+    <End Role="majka" Type="Self.majka" Multiplicity="1" />
+    <End Role="majka_doktor" Type="Self.majka_doktor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="majka">
+        <PropertyRef Name="id_majka" />
+      </Principal>
+      <Dependent Role="majka_doktor">
+        <PropertyRef Name="id_majka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="public_pregled_majka_doktor_id_majka_doktor_fk">
+    <End Role="majka_doktor" Type="Self.majka_doktor" Multiplicity="1" />
+    <End Role="pregled" Type="Self.pregled" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="majka_doktor">
+        <PropertyRef Name="id_majka_doktor" />
+      </Principal>
+      <Dependent Role="pregled">
+        <PropertyRef Name="id_majka_doktor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="public_trening_majka_id_majka">
+    <End Role="majka" Type="Self.majka" Multiplicity="1" />
+    <End Role="trening" Type="Self.trening" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="majka">
+        <PropertyRef Name="id_majka" />
+      </Principal>
+      <Dependent Role="trening">
+        <PropertyRef Name="id_majka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="public_trening_vrsta_treninga_id_vrsta_fk">
+    <End Role="vrsta_treninga" Type="Self.vrsta_treninga" Multiplicity="1" />
+    <End Role="trening" Type="Self.trening" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vrsta_treninga">
+        <PropertyRef Name="id_vrsta" />
+      </Principal>
+      <Dependent Role="trening">
+        <PropertyRef Name="id_vrsta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="public_zapis_opsega_majka_id_majka_fk">
+    <End Role="majka" Type="Self.majka" Multiplicity="1" />
+    <End Role="zapis_opsega" Type="Self.zapis_opsega" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="majka">
+        <PropertyRef Name="id_majka" />
+      </Principal>
+      <Dependent Role="zapis_opsega">
+        <PropertyRef Name="id_majka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="public_zapis_tezine_majka_id_majka">
+    <End Role="majka" Type="Self.majka" Multiplicity="1" />
+    <End Role="zapis_tezine" Type="Self.zapis_tezine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="majka">
+        <PropertyRef Name="id_majka" />
+      </Principal>
+      <Dependent Role="zapis_tezine">
+        <PropertyRef Name="id_majka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="pregnancydbModelStoreContainer">
+    <EntitySet Name="beba" EntityType="Self.beba" Schema="public" store:Type="Tables" />
+    <EntitySet Name="dnevnik" EntityType="Self.dnevnik" Schema="public" store:Type="Tables" />
+    <EntitySet Name="dodatak_prehrani" EntityType="Self.dodatak_prehrani" Schema="public" store:Type="Tables" />
+    <EntitySet Name="doktor" EntityType="Self.doktor" Schema="public" store:Type="Tables" />
+    <EntitySet Name="majka" EntityType="Self.majka" Schema="public" store:Type="Tables" />
+    <EntitySet Name="majka_dodatak_prehrani" EntityType="Self.majka_dodatak_prehrani" Schema="public" store:Type="Tables" />
+    <EntitySet Name="majka_doktor" EntityType="Self.majka_doktor" Schema="public" store:Type="Tables" />
+    <EntitySet Name="pregled" EntityType="Self.pregled" Schema="public" store:Type="Tables" />
+    <EntitySet Name="trening" EntityType="Self.trening" Schema="public" store:Type="Tables" />
+    <EntitySet Name="vrsta_treninga" EntityType="Self.vrsta_treninga" Schema="public" store:Type="Tables" />
+    <EntitySet Name="zapis_opsega" EntityType="Self.zapis_opsega" Schema="public" store:Type="Tables" />
+    <EntitySet Name="zapis_tezine" EntityType="Self.zapis_tezine" Schema="public" store:Type="Tables" />
+    <AssociationSet Name="public_beba_majka_id_majka_fk" Association="Self.public_beba_majka_id_majka_fk">
+      <End Role="majka" EntitySet="majka" />
+      <End Role="beba" EntitySet="beba" />
+    </AssociationSet>
+    <AssociationSet Name="public_dnevnik_majka_id_majka_fk" Association="Self.public_dnevnik_majka_id_majka_fk">
+      <End Role="majka" EntitySet="majka" />
+      <End Role="dnevnik" EntitySet="dnevnik" />
+    </AssociationSet>
+    <AssociationSet Name="public_majka_dodatak_prehrani_dodatak_id" Association="Self.public_majka_dodatak_prehrani_dodatak_id">
+      <End Role="dodatak_prehrani" EntitySet="dodatak_prehrani" />
+      <End Role="majka_dodatak_prehrani" EntitySet="majka_dodatak_prehrani" />
+    </AssociationSet>
+    <AssociationSet Name="public_majka_dodatak_prehrani_majka_id" Association="Self.public_majka_dodatak_prehrani_majka_id">
+      <End Role="majka" EntitySet="majka" />
+      <End Role="majka_dodatak_prehrani" EntitySet="majka_dodatak_prehrani" />
+    </AssociationSet>
+    <AssociationSet Name="public_majka_doktor_id_doktor" Association="Self.public_majka_doktor_id_doktor">
+      <End Role="doktor" EntitySet="doktor" />
+      <End Role="majka_doktor" EntitySet="majka_doktor" />
+    </AssociationSet>
+    <AssociationSet Name="public_majka_doktor_id_majka" Association="Self.public_majka_doktor_id_majka">
+      <End Role="majka" EntitySet="majka" />
+      <End Role="majka_doktor" EntitySet="majka_doktor" />
+    </AssociationSet>
+    <AssociationSet Name="public_pregled_majka_doktor_id_majka_doktor_fk" Association="Self.public_pregled_majka_doktor_id_majka_doktor_fk">
+      <End Role="majka_doktor" EntitySet="majka_doktor" />
+      <End Role="pregled" EntitySet="pregled" />
+    </AssociationSet>
+    <AssociationSet Name="public_trening_majka_id_majka" Association="Self.public_trening_majka_id_majka">
+      <End Role="majka" EntitySet="majka" />
+      <End Role="trening" EntitySet="trening" />
+    </AssociationSet>
+    <AssociationSet Name="public_trening_vrsta_treninga_id_vrsta_fk" Association="Self.public_trening_vrsta_treninga_id_vrsta_fk">
+      <End Role="vrsta_treninga" EntitySet="vrsta_treninga" />
+      <End Role="trening" EntitySet="trening" />
+    </AssociationSet>
+    <AssociationSet Name="public_zapis_opsega_majka_id_majka_fk" Association="Self.public_zapis_opsega_majka_id_majka_fk">
+      <End Role="majka" EntitySet="majka" />
+      <End Role="zapis_opsega" EntitySet="zapis_opsega" />
+    </AssociationSet>
+    <AssociationSet Name="public_zapis_tezine_majka_id_majka" Association="Self.public_zapis_tezine_majka_id_majka">
+      <End Role="majka" EntitySet="majka" />
+      <End Role="zapis_tezine" EntitySet="zapis_tezine" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

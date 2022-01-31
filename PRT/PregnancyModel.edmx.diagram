@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="42f68265bebd4968908100be639b8ebd" Name="Diagram1">
+        <EntityTypeShape EntityType="pregnancydbModel.beba" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="pregnancydbModel.dnevnik" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="pregnancydbModel.dodatak_prehrani" Width="1.5" PointX="0.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="pregnancydbModel.doktor" Width="1.5" PointX="3.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pregnancydbModel.majka" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="pregnancydbModel.majka_dodatak_prehrani" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pregnancydbModel.majka_doktor" Width="1.5" PointX="6" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="pregnancydbModel.pregled" Width="1.5" PointX="8.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="pregnancydbModel.trening" Width="1.5" PointX="6" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pregnancydbModel.vrsta_treninga" Width="1.5" PointX="3.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="pregnancydbModel.zapis_opsega" Width="1.5" PointX="3" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="pregnancydbModel.zapis_tezine" Width="1.5" PointX="3" PointY="24.75" IsExpanded="true" />
+        <AssociationConnector Association="pregnancydbModel.public_beba_majka_id_majka_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="pregnancydbModel.public_dnevnik_majka_id_majka_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="pregnancydbModel.public_majka_dodatak_prehrani_dodatak_id" ManuallyRouted="false" />
+        <AssociationConnector Association="pregnancydbModel.public_majka_doktor_id_doktor" ManuallyRouted="false" />
+        <AssociationConnector Association="pregnancydbModel.public_majka_dodatak_prehrani_majka_id" ManuallyRouted="false" />
+        <AssociationConnector Association="pregnancydbModel.public_majka_doktor_id_majka" ManuallyRouted="false" />
+        <AssociationConnector Association="pregnancydbModel.public_trening_majka_id_majka" ManuallyRouted="false" />
+        <AssociationConnector Association="pregnancydbModel.public_zapis_opsega_majka_id_majka_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="pregnancydbModel.public_zapis_tezine_majka_id_majka" ManuallyRouted="false" />
+        <AssociationConnector Association="pregnancydbModel.public_pregled_majka_doktor_id_majka_doktor_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="pregnancydbModel.public_trening_vrsta_treninga_id_vrsta_fk" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
