@@ -12,31 +12,18 @@ namespace PRT.Forms
 {
     public partial class InformacijeOBebamaForm : Form
     {
-        public InformacijeOBebamaForm()
+        private majka prijavljenaMajka;
+        public InformacijeOBebamaForm(majka prijavljenaMajka)
         {
             InitializeComponent();
-        }
-
-        private void moTrackerLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void obrisiZapisButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void prikazOpsegaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            this.prijavljenaMajka = prijavljenaMajka;
+            dohvatiBebe();
         }
 
         private void dodajZapisButton_Click(object sender, EventArgs e)
         {
-            BebaForm bebaForm = new BebaForm();
+            BebaForm bebaForm = new BebaForm(prijavljenaMajka, this);
             bebaForm.ShowDialog();
-            this.Close();
         }
 
         private void InformacijeOBebamaForm_Load(object sender, EventArgs e)
@@ -46,6 +33,39 @@ namespace PRT.Forms
             this.MinimizeBox = false;
 
             moTrackerLabel.Left = (this.ClientSize.Width - moTrackerLabel.Width) / 2;
+        }
+
+        public void dohvatiBebe()
+        {
+            using (var contex = new pregnancydbEntities())
+            {
+                var query = from k in contex.beba
+                            where k.id_majka == prijavljenaMajka.id_majka
+                            select k;
+
+                bebaBindingSource.DataSource = null;
+                bebaBindingSource.DataSource = query.ToList();
+            }
+        }
+
+        private void obrisiZapisButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var contex = new pregnancydbEntities())
+                {
+                    beba zapis = bebaBindingSource.Current as beba;
+                    contex.beba.Attach(zapis);
+                    // contex.Entry(zapis).State = System.Data.Entity.EntityState.Deleted;
+                    contex.beba.Remove(zapis);
+                    contex.SaveChanges();
+                }
+                dohvatiBebe();
+            }
+            catch
+            {
+                MessageBox.Show("Ne postoji zapis za brisanje");
+            }
         }
     }
 }

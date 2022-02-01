@@ -293,7 +293,13 @@
     <None Include="PregnancyModel.edmx.diagram">
       <DependentUpon>PregnancyModel.edmx</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\beba.datasource" />
+    <None Include="Properties\DataSources\dnevnik.datasource" />
+    <None Include="Properties\DataSources\majka_dodatak_prehrani.datasource" />
+    <None Include="Properties\DataSources\pregled.datasource" />
+    <None Include="Properties\DataSources\trening.datasource" />
     <None Include="Properties\DataSources\zapis_opsega.datasource" />
+    <None Include="Properties\DataSources\zapis_tezine.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

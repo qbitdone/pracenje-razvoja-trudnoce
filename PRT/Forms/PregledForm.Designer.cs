@@ -76,6 +76,7 @@ namespace PRT.Forms
             this.spremiButton.TabIndex = 31;
             this.spremiButton.Text = "Spremi";
             this.spremiButton.UseVisualStyleBackColor = false;
+            this.spremiButton.Click += new System.EventHandler(this.spremiButton_Click);
             // 
             // odustaniButton
             // 
@@ -121,6 +122,7 @@ namespace PRT.Forms
             this.Controls.Add(this.moTrackerLabel);
             this.Name = "PregledForm";
             this.Text = "moTracker";
+            this.Load += new System.EventHandler(this.PregledForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

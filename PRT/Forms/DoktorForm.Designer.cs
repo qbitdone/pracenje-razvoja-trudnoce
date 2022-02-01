@@ -162,6 +162,7 @@ namespace PRT.Forms
             this.spremiButton.TabIndex = 25;
             this.spremiButton.Text = "Spremi";
             this.spremiButton.UseVisualStyleBackColor = false;
+            this.spremiButton.Click += new System.EventHandler(this.spremiButton_Click);
             // 
             // odustaniButton
             // 
@@ -196,6 +197,7 @@ namespace PRT.Forms
             this.Controls.Add(this.imeTextBox);
             this.Name = "DoktorForm";
             this.Text = "moTracker";
+            this.Load += new System.EventHandler(this.DoktorForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

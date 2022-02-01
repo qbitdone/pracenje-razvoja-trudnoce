@@ -12,9 +12,12 @@ namespace PRT.Forms
 {
     public partial class EvidencijaTreningaForm : Form
     {
-        public EvidencijaTreningaForm()
+        private majka prijavljenaMajka;
+        public EvidencijaTreningaForm(majka prijavljenaMajka)
         {
             InitializeComponent();
+            this.prijavljenaMajka = prijavljenaMajka;
+            dohvatiTreninge();
         }
 
         private void EvidencijaTreningaForm_Load(object sender, EventArgs e)
@@ -28,8 +31,35 @@ namespace PRT.Forms
 
         private void dodajZapisButton_Click(object sender, EventArgs e)
         {
-            TreningForm treningForm = new TreningForm();
+            TreningForm treningForm = new TreningForm(prijavljenaMajka, this);
             treningForm.ShowDialog();
+        }
+
+        public void dohvatiTreninge()
+        {
+            using (var contex = new pregnancydbEntities())
+            {
+                var query = from k in contex.trening.Include("vrsta_treninga")
+                            where k.id_majka == prijavljenaMajka.id_majka
+                            select k;
+
+                treningBindingSource.DataSource = null;
+                treningBindingSource.DataSource = query.ToList();
+
+            }
+        }
+
+        private void obrisiZapisButton_Click(object sender, EventArgs e)
+        {
+            using (var contex = new pregnancydbEntities())
+            {
+                trening zapis = treningBindingSource.Current as trening;
+                contex.trening.Attach(zapis);
+                // contex.Entry(zapis).State = System.Data.Entity.EntityState.Deleted;
+                contex.trening.Remove(zapis);
+                contex.SaveChanges();
+            }
+            dohvatiTreninge();
         }
     }
 }

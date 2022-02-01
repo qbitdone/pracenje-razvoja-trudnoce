@@ -29,12 +29,18 @@ namespace PRT.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InformacijeOBebamaForm));
             this.dodajZapisButton = new System.Windows.Forms.Button();
             this.obrisiZapisButton = new System.Windows.Forms.Button();
             this.prikazBebaDataGridView = new System.Windows.Forms.DataGridView();
             this.moTrackerLabel = new System.Windows.Forms.Label();
+            this.bebaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.spolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.prikazBebaDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bebaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dodajZapisButton
@@ -61,12 +67,20 @@ namespace PRT.Forms
             // 
             // prikazBebaDataGridView
             // 
+            this.prikazBebaDataGridView.AllowUserToAddRows = false;
+            this.prikazBebaDataGridView.AllowUserToDeleteRows = false;
+            this.prikazBebaDataGridView.AutoGenerateColumns = false;
             this.prikazBebaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.prikazBebaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.imeDataGridViewTextBoxColumn,
+            this.prezimeDataGridViewTextBoxColumn,
+            this.spolDataGridViewTextBoxColumn});
+            this.prikazBebaDataGridView.DataSource = this.bebaBindingSource;
             this.prikazBebaDataGridView.Location = new System.Drawing.Point(31, 106);
             this.prikazBebaDataGridView.Name = "prikazBebaDataGridView";
+            this.prikazBebaDataGridView.ReadOnly = true;
             this.prikazBebaDataGridView.Size = new System.Drawing.Size(300, 150);
             this.prikazBebaDataGridView.TabIndex = 12;
-            this.prikazBebaDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.prikazOpsegaDataGridView_CellContentClick);
             // 
             // moTrackerLabel
             // 
@@ -78,14 +92,38 @@ namespace PRT.Forms
             this.moTrackerLabel.Size = new System.Drawing.Size(115, 64);
             this.moTrackerLabel.TabIndex = 11;
             this.moTrackerLabel.Text = "Bebe";
-            this.moTrackerLabel.Click += new System.EventHandler(this.moTrackerLabel_Click);
+            // 
+            // bebaBindingSource
+            // 
+            this.bebaBindingSource.DataSource = typeof(PRT.beba);
+            // 
+            // imeDataGridViewTextBoxColumn
+            // 
+            this.imeDataGridViewTextBoxColumn.DataPropertyName = "ime";
+            this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
+            this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
+            this.imeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prezimeDataGridViewTextBoxColumn
+            // 
+            this.prezimeDataGridViewTextBoxColumn.DataPropertyName = "prezime";
+            this.prezimeDataGridViewTextBoxColumn.HeaderText = "Prezime";
+            this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
+            this.prezimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // spolDataGridViewTextBoxColumn
+            // 
+            this.spolDataGridViewTextBoxColumn.DataPropertyName = "spol";
+            this.spolDataGridViewTextBoxColumn.HeaderText = "Spol";
+            this.spolDataGridViewTextBoxColumn.Name = "spolDataGridViewTextBoxColumn";
+            this.spolDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // InformacijeOBebamaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(395, 365);
+            this.ClientSize = new System.Drawing.Size(374, 365);
             this.Controls.Add(this.dodajZapisButton);
             this.Controls.Add(this.obrisiZapisButton);
             this.Controls.Add(this.prikazBebaDataGridView);
@@ -94,6 +132,7 @@ namespace PRT.Forms
             this.Text = "moTracker";
             this.Load += new System.EventHandler(this.InformacijeOBebamaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.prikazBebaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bebaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,5 +144,9 @@ namespace PRT.Forms
         private System.Windows.Forms.Button obrisiZapisButton;
         private System.Windows.Forms.DataGridView prikazBebaDataGridView;
         private System.Windows.Forms.Label moTrackerLabel;
+        private System.Windows.Forms.BindingSource bebaBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prezimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn spolDataGridViewTextBoxColumn;
     }
 }

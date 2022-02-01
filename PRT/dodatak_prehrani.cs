@@ -25,5 +25,10 @@ namespace PRT
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<majka_dodatak_prehrani> majka_dodatak_prehrani { get; set; }
+
+        public override string ToString()
+        {
+            return naziv;
+        }
     }
 }

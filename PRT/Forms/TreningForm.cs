@@ -12,9 +12,14 @@ namespace PRT.Forms
 {
     public partial class TreningForm : Form
     {
-        public TreningForm()
+        private majka prijavljenaMajka;
+        private readonly EvidencijaTreningaForm evidencijaTreningaForm;
+        public TreningForm(majka prijavljenaMajka, EvidencijaTreningaForm evidencijaTreningaForm)
         {
             InitializeComponent();
+            this.prijavljenaMajka = prijavljenaMajka;
+            this.evidencijaTreningaForm = evidencijaTreningaForm;
+            dohvatiTreninge();
         }
 
         private void odustaniButton_Click(object sender, EventArgs e)
@@ -29,6 +34,36 @@ namespace PRT.Forms
             this.MinimizeBox = false;
 
             moTrackerLabel.Left = (this.ClientSize.Width - moTrackerLabel.Width) / 2;
+        }
+
+        private void dohvatiTreninge()
+        {
+            using (var contex = new pregnancydbEntities())
+            {
+                var query = from k in contex.vrsta_treninga
+                            select k;
+
+                vrstaTreningaComboBox.DataSource = null;
+                vrstaTreningaComboBox.DataSource = query.ToList();
+
+            }
+        }
+
+        private void spremiButton_Click(object sender, EventArgs e)
+        {
+            using (var contex = new pregnancydbEntities())
+            {
+                trening trening = new trening();
+                trening.id_majka = prijavljenaMajka.id_majka;
+                trening.id_vrsta = (vrstaTreningaComboBox.SelectedItem as vrsta_treninga).id_vrsta;
+                trening.datum = datumDTP.Value;
+                trening.biljeske = sazetakTextBox.Text;
+
+                contex.trening.Add(trening);
+                contex.SaveChanges();
+            }
+            this.Hide();
+            evidencijaTreningaForm.dohvatiTreninge();
         }
     }
 }

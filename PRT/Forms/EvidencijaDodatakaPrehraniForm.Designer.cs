@@ -29,12 +29,20 @@ namespace PRT.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EvidencijaDodatakaPrehraniForm));
             this.dodajZapisButton = new System.Windows.Forms.Button();
             this.obrisiZapisButton = new System.Windows.Forms.Button();
             this.prikazDodatakaDataGridView = new System.Windows.Forms.DataGridView();
             this.moTrackerLabel = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.majkadodatakprehraniBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dodatak_prehrani = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumuzimanjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.prikazDodatakaDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.majkadodatakprehraniBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dodajZapisButton
@@ -57,12 +65,23 @@ namespace PRT.Forms
             this.obrisiZapisButton.TabIndex = 9;
             this.obrisiZapisButton.Text = "Obriši Zapis";
             this.obrisiZapisButton.UseVisualStyleBackColor = false;
+            this.obrisiZapisButton.Click += new System.EventHandler(this.obrisiZapisButton_Click);
             // 
             // prikazDodatakaDataGridView
             // 
+            this.prikazDodatakaDataGridView.AllowUserToAddRows = false;
+            this.prikazDodatakaDataGridView.AllowUserToDeleteRows = false;
+            this.prikazDodatakaDataGridView.AutoGenerateColumns = false;
+            this.prikazDodatakaDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.prikazDodatakaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.prikazDodatakaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dodatak_prehrani,
+            this.kolicinaDataGridViewTextBoxColumn,
+            this.datumuzimanjaDataGridViewTextBoxColumn});
+            this.prikazDodatakaDataGridView.DataSource = this.majkadodatakprehraniBindingSource;
             this.prikazDodatakaDataGridView.Location = new System.Drawing.Point(41, 106);
             this.prikazDodatakaDataGridView.Name = "prikazDodatakaDataGridView";
+            this.prikazDodatakaDataGridView.ReadOnly = true;
             this.prikazDodatakaDataGridView.Size = new System.Drawing.Size(300, 150);
             this.prikazDodatakaDataGridView.TabIndex = 8;
             // 
@@ -76,6 +95,43 @@ namespace PRT.Forms
             this.moTrackerLabel.Size = new System.Drawing.Size(410, 64);
             this.moTrackerLabel.TabIndex = 7;
             this.moTrackerLabel.Text = "Evidencija Dodataka";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "dodatak_prehrani";
+            this.dataGridViewTextBoxColumn1.HeaderText = "dodatak_prehrani";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "dodatak_prehrani";
+            this.dataGridViewTextBoxColumn2.HeaderText = "dodatak_prehrani";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // majkadodatakprehraniBindingSource
+            // 
+            this.majkadodatakprehraniBindingSource.DataSource = typeof(PRT.majka_dodatak_prehrani);
+            // 
+            // dodatak_prehrani
+            // 
+            this.dodatak_prehrani.DataPropertyName = "dodatak_prehrani";
+            this.dodatak_prehrani.HeaderText = "Dodatak";
+            this.dodatak_prehrani.Name = "dodatak_prehrani";
+            this.dodatak_prehrani.ReadOnly = true;
+            // 
+            // kolicinaDataGridViewTextBoxColumn
+            // 
+            this.kolicinaDataGridViewTextBoxColumn.DataPropertyName = "kolicina";
+            this.kolicinaDataGridViewTextBoxColumn.HeaderText = "Količina";
+            this.kolicinaDataGridViewTextBoxColumn.Name = "kolicinaDataGridViewTextBoxColumn";
+            this.kolicinaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // datumuzimanjaDataGridViewTextBoxColumn
+            // 
+            this.datumuzimanjaDataGridViewTextBoxColumn.DataPropertyName = "datum_uzimanja";
+            this.datumuzimanjaDataGridViewTextBoxColumn.HeaderText = "Datum Uzimanja";
+            this.datumuzimanjaDataGridViewTextBoxColumn.Name = "datumuzimanjaDataGridViewTextBoxColumn";
+            this.datumuzimanjaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // EvidencijaDodatakaPrehraniForm
             // 
@@ -91,6 +147,7 @@ namespace PRT.Forms
             this.Text = "moTracker";
             this.Load += new System.EventHandler(this.EvidencijaDodatakaPrehraniForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.prikazDodatakaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.majkadodatakprehraniBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +159,11 @@ namespace PRT.Forms
         private System.Windows.Forms.Button obrisiZapisButton;
         private System.Windows.Forms.DataGridView prikazDodatakaDataGridView;
         private System.Windows.Forms.Label moTrackerLabel;
+        private System.Windows.Forms.BindingSource majkadodatakprehraniBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dodatak_prehrani;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolicinaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datumuzimanjaDataGridViewTextBoxColumn;
     }
 }

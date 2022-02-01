@@ -41,7 +41,7 @@ namespace PRT.Forms
             {
                 using (var context = new pregnancydbEntities())
                 {
-                    int opseg = int.Parse(opsegTextBox.Text);
+                    double opseg = double.Parse(opsegTextBox.Text);
                     zapis_opsega zapis = new zapis_opsega();
                     zapis.datum = DateTime.Now;
                     zapis.opseg = opseg;
@@ -51,7 +51,6 @@ namespace PRT.Forms
                     context.SaveChanges();
                 }
                 evidencijaOpsegaForm.dohvatiOpsege();
-                MessageBox.Show("Uspješno zabilježen opseg");
                 this.Hide();
             }
             catch

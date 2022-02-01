@@ -29,12 +29,18 @@ namespace PRT.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DnevnikForm));
             this.moTrackerLabel = new System.Windows.Forms.Label();
             this.prikazDnevnikaDataGridView = new System.Windows.Forms.DataGridView();
             this.dodajZapisButton = new System.Windows.Forms.Button();
             this.obrisiZapisButton = new System.Windows.Forms.Button();
+            this.dnevnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.naslovDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sadrzajDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumzapisaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.prikazDnevnikaDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dnevnikBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // moTrackerLabel
@@ -50,9 +56,18 @@ namespace PRT.Forms
             // 
             // prikazDnevnikaDataGridView
             // 
+            this.prikazDnevnikaDataGridView.AllowUserToAddRows = false;
+            this.prikazDnevnikaDataGridView.AllowUserToDeleteRows = false;
+            this.prikazDnevnikaDataGridView.AutoGenerateColumns = false;
             this.prikazDnevnikaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.prikazDnevnikaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.naslovDataGridViewTextBoxColumn,
+            this.sadrzajDataGridViewTextBoxColumn,
+            this.datumzapisaDataGridViewTextBoxColumn});
+            this.prikazDnevnikaDataGridView.DataSource = this.dnevnikBindingSource;
             this.prikazDnevnikaDataGridView.Location = new System.Drawing.Point(40, 109);
             this.prikazDnevnikaDataGridView.Name = "prikazDnevnikaDataGridView";
+            this.prikazDnevnikaDataGridView.ReadOnly = true;
             this.prikazDnevnikaDataGridView.Size = new System.Drawing.Size(677, 211);
             this.prikazDnevnikaDataGridView.TabIndex = 17;
             // 
@@ -76,6 +91,35 @@ namespace PRT.Forms
             this.obrisiZapisButton.TabIndex = 18;
             this.obrisiZapisButton.Text = "Obriši Zapis";
             this.obrisiZapisButton.UseVisualStyleBackColor = false;
+            this.obrisiZapisButton.Click += new System.EventHandler(this.obrisiZapisButton_Click);
+            // 
+            // dnevnikBindingSource
+            // 
+            this.dnevnikBindingSource.DataSource = typeof(PRT.dnevnik);
+            // 
+            // naslovDataGridViewTextBoxColumn
+            // 
+            this.naslovDataGridViewTextBoxColumn.DataPropertyName = "naslov";
+            this.naslovDataGridViewTextBoxColumn.HeaderText = "Naslov";
+            this.naslovDataGridViewTextBoxColumn.Name = "naslovDataGridViewTextBoxColumn";
+            this.naslovDataGridViewTextBoxColumn.ReadOnly = true;
+            this.naslovDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // sadrzajDataGridViewTextBoxColumn
+            // 
+            this.sadrzajDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sadrzajDataGridViewTextBoxColumn.DataPropertyName = "sadrzaj";
+            this.sadrzajDataGridViewTextBoxColumn.HeaderText = "Sadržaj";
+            this.sadrzajDataGridViewTextBoxColumn.Name = "sadrzajDataGridViewTextBoxColumn";
+            this.sadrzajDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sadrzajDataGridViewTextBoxColumn.Width = 67;
+            // 
+            // datumzapisaDataGridViewTextBoxColumn
+            // 
+            this.datumzapisaDataGridViewTextBoxColumn.DataPropertyName = "datum_zapisa";
+            this.datumzapisaDataGridViewTextBoxColumn.HeaderText = "Datum Zapisa";
+            this.datumzapisaDataGridViewTextBoxColumn.Name = "datumzapisaDataGridViewTextBoxColumn";
+            this.datumzapisaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // DnevnikForm
             // 
@@ -91,6 +135,7 @@ namespace PRT.Forms
             this.Text = "moTracker";
             this.Load += new System.EventHandler(this.DnevnikForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.prikazDnevnikaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dnevnikBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +147,9 @@ namespace PRT.Forms
         private System.Windows.Forms.DataGridView prikazDnevnikaDataGridView;
         private System.Windows.Forms.Button dodajZapisButton;
         private System.Windows.Forms.Button obrisiZapisButton;
+        private System.Windows.Forms.BindingSource dnevnikBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn naslovDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sadrzajDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datumzapisaDataGridViewTextBoxColumn;
     }
 }

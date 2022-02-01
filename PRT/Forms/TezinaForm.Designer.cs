@@ -68,6 +68,7 @@ namespace PRT.Forms
             this.spremiButton.TabIndex = 7;
             this.spremiButton.Text = "Spremi";
             this.spremiButton.UseVisualStyleBackColor = false;
+            this.spremiButton.Click += new System.EventHandler(this.spremiButton_Click);
             // 
             // tezinaTextBox
             // 

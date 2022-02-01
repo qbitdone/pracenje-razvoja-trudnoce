@@ -29,12 +29,17 @@ namespace PRT.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EvidencijaTezineForm));
             this.moTrackerLabel = new System.Windows.Forms.Label();
             this.prikazTezineDataGridView = new System.Windows.Forms.DataGridView();
             this.obrisiZapisButton = new System.Windows.Forms.Button();
             this.dodajZapisButton = new System.Windows.Forms.Button();
+            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tezinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zapistezineBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.prikazTezineDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zapistezineBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // moTrackerLabel
@@ -50,9 +55,17 @@ namespace PRT.Forms
             // 
             // prikazTezineDataGridView
             // 
+            this.prikazTezineDataGridView.AllowUserToAddRows = false;
+            this.prikazTezineDataGridView.AllowUserToDeleteRows = false;
+            this.prikazTezineDataGridView.AutoGenerateColumns = false;
             this.prikazTezineDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.prikazTezineDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.datumDataGridViewTextBoxColumn,
+            this.tezinaDataGridViewTextBoxColumn});
+            this.prikazTezineDataGridView.DataSource = this.zapistezineBindingSource;
             this.prikazTezineDataGridView.Location = new System.Drawing.Point(43, 104);
             this.prikazTezineDataGridView.Name = "prikazTezineDataGridView";
+            this.prikazTezineDataGridView.ReadOnly = true;
             this.prikazTezineDataGridView.Size = new System.Drawing.Size(300, 150);
             this.prikazTezineDataGridView.TabIndex = 4;
             // 
@@ -65,6 +78,7 @@ namespace PRT.Forms
             this.obrisiZapisButton.TabIndex = 5;
             this.obrisiZapisButton.Text = "Obriši Zapis";
             this.obrisiZapisButton.UseVisualStyleBackColor = false;
+            this.obrisiZapisButton.Click += new System.EventHandler(this.obrisiZapisButton_Click);
             // 
             // dodajZapisButton
             // 
@@ -76,6 +90,24 @@ namespace PRT.Forms
             this.dodajZapisButton.Text = "Dodaj Novi Zapis";
             this.dodajZapisButton.UseVisualStyleBackColor = false;
             this.dodajZapisButton.Click += new System.EventHandler(this.dodajZapisButton_Click);
+            // 
+            // datumDataGridViewTextBoxColumn
+            // 
+            this.datumDataGridViewTextBoxColumn.DataPropertyName = "datum";
+            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
+            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
+            this.datumDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tezinaDataGridViewTextBoxColumn
+            // 
+            this.tezinaDataGridViewTextBoxColumn.DataPropertyName = "tezina";
+            this.tezinaDataGridViewTextBoxColumn.HeaderText = "Tezina";
+            this.tezinaDataGridViewTextBoxColumn.Name = "tezinaDataGridViewTextBoxColumn";
+            this.tezinaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // zapistezineBindingSource
+            // 
+            this.zapistezineBindingSource.DataSource = typeof(PRT.zapis_tezine);
             // 
             // EvidencijaTezineForm
             // 
@@ -91,6 +123,7 @@ namespace PRT.Forms
             this.Text = "moTracker";
             this.Load += new System.EventHandler(this.EvidencijaTezineForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.prikazTezineDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zapistezineBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +135,8 @@ namespace PRT.Forms
         private System.Windows.Forms.DataGridView prikazTezineDataGridView;
         private System.Windows.Forms.Button obrisiZapisButton;
         private System.Windows.Forms.Button dodajZapisButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tezinaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource zapistezineBindingSource;
     }
 }
