@@ -37,10 +37,11 @@ namespace PRT.Forms
             this.moTrackerLabel = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.majkadodatakprehraniBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dodatak_prehrani = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datumuzimanjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.majkadodatakprehraniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.prikazDodatakaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.majkadodatakprehraniBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -108,9 +109,12 @@ namespace PRT.Forms
             this.dataGridViewTextBoxColumn2.HeaderText = "dodatak_prehrani";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // majkadodatakprehraniBindingSource
+            // dataGridViewTextBoxColumn3
             // 
-            this.majkadodatakprehraniBindingSource.DataSource = typeof(PRT.majka_dodatak_prehrani);
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "dodatak_prehrani";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Dodatak";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dodatak_prehrani
             // 
@@ -132,6 +136,10 @@ namespace PRT.Forms
             this.datumuzimanjaDataGridViewTextBoxColumn.HeaderText = "Datum Uzimanja";
             this.datumuzimanjaDataGridViewTextBoxColumn.Name = "datumuzimanjaDataGridViewTextBoxColumn";
             this.datumuzimanjaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // majkadodatakprehraniBindingSource
+            // 
+            this.majkadodatakprehraniBindingSource.DataSource = typeof(PRT.majka_dodatak_prehrani);
             // 
             // EvidencijaDodatakaPrehraniForm
             // 
@@ -165,5 +173,6 @@ namespace PRT.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn dodatak_prehrani;
         private System.Windows.Forms.DataGridViewTextBoxColumn kolicinaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datumuzimanjaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

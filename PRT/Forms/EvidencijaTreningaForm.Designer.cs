@@ -35,10 +35,10 @@ namespace PRT.Forms
             this.obrisiZapisButton = new System.Windows.Forms.Button();
             this.prikazTreningaDataGridView = new System.Windows.Forms.DataGridView();
             this.moTrackerLabel = new System.Windows.Forms.Label();
-            this.treningBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vrstatreningaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.biljeskeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.treningBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.prikazTreningaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treningBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +70,7 @@ namespace PRT.Forms
             this.prikazTreningaDataGridView.AllowUserToAddRows = false;
             this.prikazTreningaDataGridView.AllowUserToDeleteRows = false;
             this.prikazTreningaDataGridView.AutoGenerateColumns = false;
+            this.prikazTreningaDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.prikazTreningaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.prikazTreningaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.datumDataGridViewTextBoxColumn,
@@ -93,10 +94,6 @@ namespace PRT.Forms
             this.moTrackerLabel.TabIndex = 7;
             this.moTrackerLabel.Text = "Evidencija treninga";
             // 
-            // treningBindingSource
-            // 
-            this.treningBindingSource.DataSource = typeof(PRT.trening);
-            // 
             // datumDataGridViewTextBoxColumn
             // 
             this.datumDataGridViewTextBoxColumn.DataPropertyName = "datum";
@@ -119,6 +116,10 @@ namespace PRT.Forms
             this.biljeskeDataGridViewTextBoxColumn.Name = "biljeskeDataGridViewTextBoxColumn";
             this.biljeskeDataGridViewTextBoxColumn.ReadOnly = true;
             this.biljeskeDataGridViewTextBoxColumn.Width = 68;
+            // 
+            // treningBindingSource
+            // 
+            this.treningBindingSource.DataSource = typeof(PRT.trening);
             // 
             // EvidencijaTreningaForm
             // 

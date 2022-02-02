@@ -35,10 +35,10 @@ namespace PRT.Forms
             this.prikazDnevnikaDataGridView = new System.Windows.Forms.DataGridView();
             this.dodajZapisButton = new System.Windows.Forms.Button();
             this.obrisiZapisButton = new System.Windows.Forms.Button();
-            this.dnevnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.naslovDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sadrzajDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datumzapisaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dnevnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.prikazDnevnikaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dnevnikBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +59,7 @@ namespace PRT.Forms
             this.prikazDnevnikaDataGridView.AllowUserToAddRows = false;
             this.prikazDnevnikaDataGridView.AllowUserToDeleteRows = false;
             this.prikazDnevnikaDataGridView.AutoGenerateColumns = false;
+            this.prikazDnevnikaDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.prikazDnevnikaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.prikazDnevnikaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.naslovDataGridViewTextBoxColumn,
@@ -93,10 +94,6 @@ namespace PRT.Forms
             this.obrisiZapisButton.UseVisualStyleBackColor = false;
             this.obrisiZapisButton.Click += new System.EventHandler(this.obrisiZapisButton_Click);
             // 
-            // dnevnikBindingSource
-            // 
-            this.dnevnikBindingSource.DataSource = typeof(PRT.dnevnik);
-            // 
             // naslovDataGridViewTextBoxColumn
             // 
             this.naslovDataGridViewTextBoxColumn.DataPropertyName = "naslov";
@@ -120,6 +117,10 @@ namespace PRT.Forms
             this.datumzapisaDataGridViewTextBoxColumn.HeaderText = "Datum Zapisa";
             this.datumzapisaDataGridViewTextBoxColumn.Name = "datumzapisaDataGridViewTextBoxColumn";
             this.datumzapisaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dnevnikBindingSource
+            // 
+            this.dnevnikBindingSource.DataSource = typeof(PRT.dnevnik);
             // 
             // DnevnikForm
             // 

@@ -58,6 +58,7 @@ namespace PRT.Forms
             this.prikazTezineDataGridView.AllowUserToAddRows = false;
             this.prikazTezineDataGridView.AllowUserToDeleteRows = false;
             this.prikazTezineDataGridView.AutoGenerateColumns = false;
+            this.prikazTezineDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.prikazTezineDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.prikazTezineDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.datumDataGridViewTextBoxColumn,

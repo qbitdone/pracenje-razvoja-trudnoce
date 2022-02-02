@@ -1,7 +1,7 @@
 ﻿
 namespace PRT
 {
-    partial class Form1
+    partial class PrijavaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,14 @@ namespace PRT
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrijavaForm));
             this.prijavaButton = new System.Windows.Forms.Button();
             this.prijavaLabel = new System.Windows.Forms.Label();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.Email = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.registracijaButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // prijavaButton
@@ -91,23 +92,35 @@ namespace PRT
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(76, 176);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Password";
+            this.label2.Text = "Lozinka";
             // 
-            // Form1
+            // registracijaButton
+            // 
+            this.registracijaButton.BackColor = System.Drawing.Color.White;
+            this.registracijaButton.Location = new System.Drawing.Point(121, 341);
+            this.registracijaButton.Name = "registracijaButton";
+            this.registracijaButton.Size = new System.Drawing.Size(136, 54);
+            this.registracijaButton.TabIndex = 8;
+            this.registracijaButton.Text = "Registracija";
+            this.registracijaButton.UseVisualStyleBackColor = false;
+            this.registracijaButton.Click += new System.EventHandler(this.registracijaButton_Click);
+            // 
+            // PrijavaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(397, 371);
+            this.ClientSize = new System.Drawing.Size(397, 424);
+            this.Controls.Add(this.registracijaButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Email);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.prijavaLabel);
             this.Controls.Add(this.prijavaButton);
-            this.Name = "Form1";
+            this.Name = "PrijavaForm";
             this.Text = "moTracker";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -123,6 +136,7 @@ namespace PRT
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label Email;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button registracijaButton;
     }
 }
 

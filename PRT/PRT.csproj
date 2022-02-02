@@ -154,6 +154,12 @@
     <Compile Include="Forms\PreglediForm.Designer.cs">
       <DependentUpon>PreglediForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RegistracijaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegistracijaForm.Designer.cs">
+      <DependentUpon>RegistracijaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TezinaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PreglediForm.resx">
       <DependentUpon>PreglediForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegistracijaForm.resx">
+      <DependentUpon>RegistracijaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TezinaForm.resx">
       <DependentUpon>TezinaForm.cs</DependentUpon>

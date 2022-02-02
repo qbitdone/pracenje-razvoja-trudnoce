@@ -2,7 +2,6 @@ C:\Users\FOIStudent\Desktop\pracenje-razvoja-trudnoce\PRT\bin\Debug\PRT.exe.conf
 C:\Users\FOIStudent\Desktop\pracenje-razvoja-trudnoce\PRT\bin\Debug\PRT.exe
 C:\Users\FOIStudent\Desktop\pracenje-razvoja-trudnoce\PRT\bin\Debug\PRT.pdb
 C:\Users\FOIStudent\Desktop\pracenje-razvoja-trudnoce\PRT\obj\Debug\PRT.csproj.AssemblyReference.cache
-C:\Users\FOIStudent\Desktop\pracenje-razvoja-trudnoce\PRT\obj\Debug\PRT.Form1.resources
 C:\Users\FOIStudent\Desktop\pracenje-razvoja-trudnoce\PRT\obj\Debug\PRT.Properties.Resources.resources
 C:\Users\FOIStudent\Desktop\pracenje-razvoja-trudnoce\PRT\obj\Debug\PRT.csproj.GenerateResource.cache
 C:\Users\FOIStudent\Desktop\pracenje-razvoja-trudnoce\PRT\obj\Debug\PRT.csproj.CoreCompileInputs.cache
@@ -35,3 +34,5 @@ C:\Users\FOIStudent\Desktop\pracenje-razvoja-trudnoce\PRT\obj\Debug\PRT.Forms.Tr
 C:\Users\FOIStudent\Desktop\pracenje-razvoja-trudnoce\PRT\obj\Debug\PRT.Forms.DoktorForm.resources
 C:\Users\FOIStudent\Desktop\pracenje-razvoja-trudnoce\PRT\obj\Debug\PRT.Forms.PregledForm.resources
 C:\Users\FOIStudent\Desktop\pracenje-razvoja-trudnoce\PRT\obj\Debug\PRT.Forms.PreglediForm.resources
+C:\Users\FOIStudent\Desktop\pracenje-razvoja-trudnoce\PRT\obj\Debug\PRT.Forms.RegistracijaForm.resources
+C:\Users\FOIStudent\Desktop\pracenje-razvoja-trudnoce\PRT\obj\Debug\PRT.PrijavaForm.resources

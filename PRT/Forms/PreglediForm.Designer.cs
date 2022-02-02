@@ -36,9 +36,9 @@ namespace PRT.Forms
             this.prikazPregledaDataGridView = new System.Windows.Forms.DataGridView();
             this.moTrackerLabel = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pregledBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datumpregledaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sazetakDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pregledBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.prikazPregledaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pregledBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +70,7 @@ namespace PRT.Forms
             this.prikazPregledaDataGridView.AllowUserToAddRows = false;
             this.prikazPregledaDataGridView.AllowUserToDeleteRows = false;
             this.prikazPregledaDataGridView.AutoGenerateColumns = false;
+            this.prikazPregledaDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.prikazPregledaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.prikazPregledaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.datumpregledaDataGridViewTextBoxColumn,
@@ -98,10 +99,6 @@ namespace PRT.Forms
             this.dataGridViewTextBoxColumn1.HeaderText = "majka_doktor";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // pregledBindingSource
-            // 
-            this.pregledBindingSource.DataSource = typeof(PRT.pregled);
-            // 
             // datumpregledaDataGridViewTextBoxColumn
             // 
             this.datumpregledaDataGridViewTextBoxColumn.DataPropertyName = "datum_pregleda";
@@ -117,6 +114,10 @@ namespace PRT.Forms
             this.sazetakDataGridViewTextBoxColumn.Name = "sazetakDataGridViewTextBoxColumn";
             this.sazetakDataGridViewTextBoxColumn.ReadOnly = true;
             this.sazetakDataGridViewTextBoxColumn.Width = 71;
+            // 
+            // pregledBindingSource
+            // 
+            this.pregledBindingSource.DataSource = typeof(PRT.pregled);
             // 
             // PreglediForm
             // 

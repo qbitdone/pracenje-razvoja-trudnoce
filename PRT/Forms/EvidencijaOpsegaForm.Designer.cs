@@ -69,6 +69,7 @@ namespace PRT.Forms
             this.prikazOpsegaDataGridView.AllowUserToAddRows = false;
             this.prikazOpsegaDataGridView.AllowUserToDeleteRows = false;
             this.prikazOpsegaDataGridView.AutoGenerateColumns = false;
+            this.prikazOpsegaDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.prikazOpsegaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.prikazOpsegaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.datumDataGridViewTextBoxColumn,

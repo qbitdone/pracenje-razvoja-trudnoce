@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PRT
 {
-    public partial class Form1 : Form
+    public partial class PrijavaForm : Form
     {
-        public Form1()
+        public PrijavaForm()
         {
             InitializeComponent();
         }
@@ -24,8 +24,10 @@ namespace PRT
             this.MaximizeBox = false;
             this.MinimizeBox = false;
 
-            prijavaButton.Left = (this.ClientSize.Width - prijavaButton.Width) / 2;
+            
             prijavaLabel.Left = (this.ClientSize.Width - prijavaLabel.Width) / 2;
+            prijavaButton.Left = (this.ClientSize.Width - prijavaButton.Width) / 2;
+            registracijaButton.Left = (this.ClientSize.Width - registracijaButton.Width) / 2;
             passwordTextBox.Left = (this.ClientSize.Width - passwordTextBox.Width) / 2;
             emailTextBox.Left = (this.ClientSize.Width - passwordTextBox.Width) / 2;
         }
@@ -52,6 +54,13 @@ namespace PRT
                 }
             }
 
+        }
+
+        private void registracijaButton_Click(object sender, EventArgs e)
+        {
+            RegistracijaForm registracijaForm = new RegistracijaForm();
+            this.Hide();
+            registracijaForm.ShowDialog();
         }
     }
 }

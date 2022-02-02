@@ -35,10 +35,10 @@ namespace PRT.Forms
             this.obrisiZapisButton = new System.Windows.Forms.Button();
             this.prikazBebaDataGridView = new System.Windows.Forms.DataGridView();
             this.moTrackerLabel = new System.Windows.Forms.Label();
-            this.bebaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.spolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bebaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.prikazBebaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bebaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +70,7 @@ namespace PRT.Forms
             this.prikazBebaDataGridView.AllowUserToAddRows = false;
             this.prikazBebaDataGridView.AllowUserToDeleteRows = false;
             this.prikazBebaDataGridView.AutoGenerateColumns = false;
+            this.prikazBebaDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.prikazBebaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.prikazBebaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.imeDataGridViewTextBoxColumn,
@@ -93,10 +94,6 @@ namespace PRT.Forms
             this.moTrackerLabel.TabIndex = 11;
             this.moTrackerLabel.Text = "Bebe";
             // 
-            // bebaBindingSource
-            // 
-            this.bebaBindingSource.DataSource = typeof(PRT.beba);
-            // 
             // imeDataGridViewTextBoxColumn
             // 
             this.imeDataGridViewTextBoxColumn.DataPropertyName = "ime";
@@ -117,6 +114,10 @@ namespace PRT.Forms
             this.spolDataGridViewTextBoxColumn.HeaderText = "Spol";
             this.spolDataGridViewTextBoxColumn.Name = "spolDataGridViewTextBoxColumn";
             this.spolDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bebaBindingSource
+            // 
+            this.bebaBindingSource.DataSource = typeof(PRT.beba);
             // 
             // InformacijeOBebamaForm
             // 
