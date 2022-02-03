@@ -38,23 +38,30 @@ namespace PRT.Forms
 
         public void dohvatiPreglede()
         {
-            using (var contex = new pregnancydbEntities())
+            try
             {
-                int idMajkaDoktor = (from k in contex.majka_doktor
-                                     where k.id_majka == prijavljenaMajka.id_majka && k.datum_kraj == null
-                                     select k.id_majka_doktor).Single();
+                using (var contex = new pregnancydbEntities())
+                {
+                    int idMajkaDoktor = (from k in contex.majka_doktor
+                                         where k.id_majka == prijavljenaMajka.id_majka && k.datum_kraj == null
+                                         select k.id_majka_doktor).Single();
 
-                majkaDoktor = (from k in contex.majka_doktor
-                               where k.id_majka == prijavljenaMajka.id_majka && k.datum_kraj == null
-                               select k).Single();
+                    majkaDoktor = (from k in contex.majka_doktor
+                                   where k.id_majka == prijavljenaMajka.id_majka && k.datum_kraj == null
+                                   select k).Single();
 
-                
-                var query = from k in contex.pregled
-                            where k.id_majka_doktor == idMajkaDoktor
-                            select k;
 
-                pregledBindingSource.DataSource = null;
-                pregledBindingSource.DataSource = query.ToList();
+                    var query = from k in contex.pregled
+                                where k.id_majka_doktor == idMajkaDoktor
+                                select k;
+
+                    pregledBindingSource.DataSource = null;
+                    pregledBindingSource.DataSource = query.ToList();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Majka nema niti jednog doktora, molimo prvo odaberite doktora pa onda otvorite preglede");
             }
         }
 

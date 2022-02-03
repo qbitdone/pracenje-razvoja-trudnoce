@@ -58,7 +58,6 @@ namespace PRT.Forms
             {
                 majka_dodatak_prehrani zapis = majkadodatakprehraniBindingSource.Current as majka_dodatak_prehrani;
                 contex.majka_dodatak_prehrani.Attach(zapis);
-                // contex.Entry(zapis).State = System.Data.Entity.EntityState.Deleted;
                 contex.majka_dodatak_prehrani.Remove(zapis);
                 contex.SaveChanges();
             }

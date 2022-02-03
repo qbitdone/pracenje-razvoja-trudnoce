@@ -41,26 +41,43 @@ namespace PRT.Forms
         
         private void dohvatiDoktora()
         {
-            using (var contex = new pregnancydbEntities())
+            try
             {
-                var query = from k in contex.majka_doktor
-                            where k.id_majka == prijavljenaMajka.id_majka && k.datum_kraj == null
-                            select k;
-
-                majka_doktor majka_ = query.Single();
-
-
-                imeTextBox.Text = majka_.doktor.ime;
-                prezimeTextBox.Text = majka_.doktor.prezime;
-                kontaktBrojTextBox.Text = majka_.doktor.broj_telefona;
-                adresaTextBox.Text = majka_.doktor.adresa;
-
-                var upitovski = from k in contex.doktor
+                using (var contex = new pregnancydbEntities())
+                {
+                    var query = from k in contex.majka_doktor
+                                where k.id_majka == prijavljenaMajka.id_majka && k.datum_kraj == null
                                 select k;
 
-                List<doktor> ListaDoktora = upitovski.ToList();
-                noviDoktorComboBox.DataSource = null;
-                noviDoktorComboBox.DataSource = ListaDoktora;
+                    majka_doktor majka_ = query.Single();
+
+
+                    imeTextBox.Text = majka_.doktor.ime;
+                    prezimeTextBox.Text = majka_.doktor.prezime;
+                    kontaktBrojTextBox.Text = majka_.doktor.broj_telefona;
+                    adresaTextBox.Text = majka_.doktor.adresa;
+
+                    var upitovski = from k in contex.doktor
+                                    select k;
+
+                    List<doktor> ListaDoktora = upitovski.ToList();
+                    noviDoktorComboBox.DataSource = null;
+                    noviDoktorComboBox.DataSource = ListaDoktora;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Majka trenutno nema niti jednog doktora");
+
+                using (var contex = new pregnancydbEntities())
+                {
+                    var upitovski = from k in contex.doktor
+                                    select k;
+
+                    List<doktor> ListaDoktora = upitovski.ToList();
+                    noviDoktorComboBox.DataSource = null;
+                    noviDoktorComboBox.DataSource = ListaDoktora;
+                }
             }
         }
 
