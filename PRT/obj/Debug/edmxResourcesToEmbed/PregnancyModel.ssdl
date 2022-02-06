@@ -9,6 +9,8 @@
     <Property Name="ime" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="prezime" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="spol" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="datum_zaceca" Type="date" Nullable="false" />
+    <Property Name="datum_poroda" Type="date" />
   </EntityType>
   <EntityType Name="dnevnik">
     <Key>
@@ -88,6 +90,9 @@
     <Property Name="id_majka" Type="int" Nullable="false" />
     <Property Name="datum" Type="date" Nullable="false" />
     <Property Name="biljeske" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="vrijeme_pocetak" Type="time" Nullable="false" />
+    <Property Name="vrijeme_kraj" Type="time" />
+    <Property Name="trajanje" Type="numeric" Precision="29" Scale="15" Nullable="false" />
   </EntityType>
   <EntityType Name="vrsta_treninga">
     <Key>
@@ -103,7 +108,8 @@
     <Property Name="id_zapis_opsega" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="id_majka" Type="int" Nullable="false" />
     <Property Name="opseg" Type="double precision" Nullable="false" />
-    <Property Name="datum" Type="date" Nullable="false" />
+    <Property Name="datum_pocetak" Type="date" Nullable="false" />
+    <Property Name="datum_kraj" Type="date" />
   </EntityType>
   <EntityType Name="zapis_tezine">
     <Key>
@@ -112,7 +118,8 @@
     <Property Name="id_zapis_tezine" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="id_majka" Type="int" Nullable="false" />
     <Property Name="tezina" Type="double precision" Nullable="false" />
-    <Property Name="datum" Type="date" Nullable="false" />
+    <Property Name="datum_pocetak" Type="date" Nullable="false" />
+    <Property Name="datum_kraj" Type="date" />
   </EntityType>
   <Association Name="public_beba_majka_id_majka_fk">
     <End Role="majka" Type="Self.majka" Multiplicity="1" />

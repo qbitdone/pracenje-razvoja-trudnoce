@@ -40,6 +40,8 @@ namespace PRT.Forms
             this.prezimeTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.spolTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.datumDTP = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -54,7 +56,7 @@ namespace PRT.Forms
             // 
             // imeTextBox
             // 
-            this.imeTextBox.Location = new System.Drawing.Point(116, 124);
+            this.imeTextBox.Location = new System.Drawing.Point(136, 124);
             this.imeTextBox.Name = "imeTextBox";
             this.imeTextBox.Size = new System.Drawing.Size(127, 20);
             this.imeTextBox.TabIndex = 18;
@@ -114,7 +116,7 @@ namespace PRT.Forms
             // 
             // prezimeTextBox
             // 
-            this.prezimeTextBox.Location = new System.Drawing.Point(115, 152);
+            this.prezimeTextBox.Location = new System.Drawing.Point(135, 152);
             this.prezimeTextBox.Name = "prezimeTextBox";
             this.prezimeTextBox.Size = new System.Drawing.Size(127, 20);
             this.prezimeTextBox.TabIndex = 18;
@@ -130,10 +132,27 @@ namespace PRT.Forms
             // 
             // spolTextBox
             // 
-            this.spolTextBox.Location = new System.Drawing.Point(115, 180);
+            this.spolTextBox.Location = new System.Drawing.Point(135, 180);
             this.spolTextBox.Name = "spolTextBox";
             this.spolTextBox.Size = new System.Drawing.Size(127, 20);
             this.spolTextBox.TabIndex = 18;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Location = new System.Drawing.Point(48, 210);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 13);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Datum Začeća:";
+            // 
+            // datumDTP
+            // 
+            this.datumDTP.Location = new System.Drawing.Point(136, 206);
+            this.datumDTP.Name = "datumDTP";
+            this.datumDTP.Size = new System.Drawing.Size(127, 20);
+            this.datumDTP.TabIndex = 20;
             // 
             // BebaForm
             // 
@@ -141,7 +160,9 @@ namespace PRT.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(356, 332);
+            this.Controls.Add(this.datumDTP);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.spolTextBox);
@@ -171,5 +192,7 @@ namespace PRT.Forms
         private System.Windows.Forms.TextBox prezimeTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox spolTextBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker datumDTP;
     }
 }

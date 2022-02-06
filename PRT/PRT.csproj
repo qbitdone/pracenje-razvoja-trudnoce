@@ -76,9 +76,11 @@
     <Compile Include="dnevnik.cs">
       <DependentUpon>PregnancyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Partial Classes\dodatak_prehrani.code.cs" />
     <Compile Include="dodatak_prehrani.cs">
       <DependentUpon>PregnancyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Partial Classes\doktor.code.cs" />
     <Compile Include="doktor.cs">
       <DependentUpon>PregnancyModel.tt</DependentUpon>
     </Compile>
@@ -190,6 +192,7 @@
     <Compile Include="Forms\ZapisDnevnikaForm.Designer.cs">
       <DependentUpon>ZapisDnevnikaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Partial Classes\majka.code.cs" />
     <Compile Include="majka.cs">
       <DependentUpon>PregnancyModel.tt</DependentUpon>
     </Compile>
@@ -222,6 +225,7 @@
     <Compile Include="trening.cs">
       <DependentUpon>PregnancyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Partial Classes\vrsta_treninga.code.cs" />
     <Compile Include="vrsta_treninga.cs">
       <DependentUpon>PregnancyModel.tt</DependentUpon>
     </Compile>

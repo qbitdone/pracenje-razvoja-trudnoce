@@ -19,6 +19,9 @@ namespace PRT
         public int id_majka { get; set; }
         public System.DateTime datum { get; set; }
         public string biljeske { get; set; }
+        public System.TimeSpan vrijeme_pocetak { get; set; }
+        public Nullable<System.TimeSpan> vrijeme_kraj { get; set; }
+        public decimal trajanje { get; set; }
     
         public virtual majka majka { get; set; }
         public virtual vrsta_treninga vrsta_treninga { get; set; }

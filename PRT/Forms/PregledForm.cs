@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Infrastructure;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -29,25 +30,35 @@ namespace PRT.Forms
 
         private void spremiButton_Click(object sender, EventArgs e)
         {
-            try
+            if (sazetakTextBox.Text == "")
             {
-                using (var contex = new pregnancydbEntities())
-                {
-                    pregled pregled = new pregled();
-
-                    pregled.datum_pregleda = datumDTP.Value;
-                    pregled.id_majka_doktor = majkaDoktor.id_majka_doktor;
-                    pregled.sazetak = sazetakTextBox.Text;
-
-                    contex.pregled.Add(pregled);
-                    contex.SaveChanges();
-                }
-                this.Close();
-                preglediForm.dohvatiPreglede();
+                MessageBox.Show("Molimo popunite sva polja");
             }
-            catch
+            else
             {
-                MessageBox.Show("Ne možete imati više pregleda isti dan!");
+                try
+                {
+                    using (var contex = new pregnancydbEntities())
+                    {
+                        pregled pregled = new pregled();
+
+                        pregled.datum_pregleda = datumDTP.Value;
+                        pregled.id_majka_doktor = majkaDoktor.id_majka_doktor;
+                        pregled.sazetak = sazetakTextBox.Text;
+
+                        contex.pregled.Add(pregled);
+                        contex.SaveChanges();
+                    }
+                    this.Close();
+                    preglediForm.dohvatiPreglede();
+                }
+                catch (DbUpdateException ex)
+                {
+                    if (ex.InnerException != null && ex.InnerException.InnerException != null)
+                    {
+                        MessageBox.Show(ex.InnerException.InnerException.Message);
+                    }
+                }
             }
         }
 

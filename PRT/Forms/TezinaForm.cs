@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Infrastructure;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -38,26 +39,35 @@ namespace PRT.Forms
 
         private void spremiButton_Click(object sender, EventArgs e)
         {
-            try
+            if (!Int32.TryParse(tezinaTextBox.Text, out int value))
             {
-                using (var context = new pregnancydbEntities())
-                {
-                    double tezina = double.Parse(tezinaTextBox.Text);
-                    zapis_tezine zapis = new zapis_tezine();
-                    zapis.datum = DateTime.Now;
-                    zapis.tezina = tezina;
-                    zapis.id_majka = prijavljenaMajka.id_majka;
-
-                    context.zapis_tezine.Add(zapis);
-                    context.SaveChanges();
-                }
-                evidencijaTezineForm.dohvatiTezine();
-                //MessageBox.Show("Uspješno zabilježena težina");
-                this.Hide();
+                MessageBox.Show("Tezina mora biti broj");
             }
-            catch
+            else
             {
-                MessageBox.Show("Težina mora biti brojčana vrijednost");
+                try
+                {
+                    using (var context = new pregnancydbEntities())
+                    {
+                        double tezina = double.Parse(tezinaTextBox.Text);
+                        zapis_tezine zapis = new zapis_tezine();
+                        zapis.datum_pocetak = DateTime.Now;
+                        zapis.tezina = tezina;
+                        zapis.id_majka = prijavljenaMajka.id_majka;
+
+                        context.zapis_tezine.Add(zapis);
+                        context.SaveChanges();
+                    }
+                    evidencijaTezineForm.dohvatiTezine();
+                    this.Hide();
+                }
+                catch (DbUpdateException ex)
+                {
+                    if (ex.InnerException != null && ex.InnerException.InnerException != null)
+                    {
+                        MessageBox.Show(ex.InnerException.InnerException.Message);
+                    }
+                }
             }
         }
     }

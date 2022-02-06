@@ -35,7 +35,8 @@ namespace PRT.Forms
             this.prikazTezineDataGridView = new System.Windows.Forms.DataGridView();
             this.obrisiZapisButton = new System.Windows.Forms.Button();
             this.dodajZapisButton = new System.Windows.Forms.Button();
-            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datum_pocetak = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dohvatiAkutalniButton = new System.Windows.Forms.Button();
             this.tezinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zapistezineBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.prikazTezineDataGridView)).BeginInit();
@@ -61,7 +62,7 @@ namespace PRT.Forms
             this.prikazTezineDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.prikazTezineDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.prikazTezineDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.datumDataGridViewTextBoxColumn,
+            this.datum_pocetak,
             this.tezinaDataGridViewTextBoxColumn});
             this.prikazTezineDataGridView.DataSource = this.zapistezineBindingSource;
             this.prikazTezineDataGridView.Location = new System.Drawing.Point(43, 104);
@@ -92,12 +93,23 @@ namespace PRT.Forms
             this.dodajZapisButton.UseVisualStyleBackColor = false;
             this.dodajZapisButton.Click += new System.EventHandler(this.dodajZapisButton_Click);
             // 
-            // datumDataGridViewTextBoxColumn
+            // datum_pocetak
             // 
-            this.datumDataGridViewTextBoxColumn.DataPropertyName = "datum";
-            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
-            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
-            this.datumDataGridViewTextBoxColumn.ReadOnly = true;
+            this.datum_pocetak.DataPropertyName = "datum_pocetak";
+            this.datum_pocetak.HeaderText = "Datum Zapisa";
+            this.datum_pocetak.Name = "datum_pocetak";
+            this.datum_pocetak.ReadOnly = true;
+            // 
+            // dohvatiAkutalniButton
+            // 
+            this.dohvatiAkutalniButton.BackColor = System.Drawing.Color.White;
+            this.dohvatiAkutalniButton.Location = new System.Drawing.Point(119, 370);
+            this.dohvatiAkutalniButton.Name = "dohvatiAkutalniButton";
+            this.dohvatiAkutalniButton.Size = new System.Drawing.Size(136, 54);
+            this.dohvatiAkutalniButton.TabIndex = 12;
+            this.dohvatiAkutalniButton.Text = "Dohvati Aktulani Zapis";
+            this.dohvatiAkutalniButton.UseVisualStyleBackColor = false;
+            this.dohvatiAkutalniButton.Click += new System.EventHandler(this.dohvatiAkutalniButton_Click);
             // 
             // tezinaDataGridViewTextBoxColumn
             // 
@@ -115,7 +127,8 @@ namespace PRT.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(395, 365);
+            this.ClientSize = new System.Drawing.Size(395, 436);
+            this.Controls.Add(this.dohvatiAkutalniButton);
             this.Controls.Add(this.dodajZapisButton);
             this.Controls.Add(this.obrisiZapisButton);
             this.Controls.Add(this.prikazTezineDataGridView);
@@ -137,7 +150,9 @@ namespace PRT.Forms
         private System.Windows.Forms.Button obrisiZapisButton;
         private System.Windows.Forms.Button dodajZapisButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tezinaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource zapistezineBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datum_pocetak;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tezinaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button dohvatiAkutalniButton;
     }
 }

@@ -34,6 +34,9 @@ namespace PRT.Forms
             this.MinimizeBox = false;
 
             moTrackerLabel.Left = (this.ClientSize.Width - moTrackerLabel.Width) / 2;
+
+            vrijemePocetakDTP.Format = DateTimePickerFormat.Time;
+            vrijemePocetakDTP.ShowUpDown = true;
         }
 
         private void dohvatiTreninge()
@@ -51,19 +54,28 @@ namespace PRT.Forms
 
         private void spremiButton_Click(object sender, EventArgs e)
         {
-            using (var contex = new pregnancydbEntities())
+            if (!Int32.TryParse(trajanjeTextBox.Text, out int value))
             {
-                trening trening = new trening();
-                trening.id_majka = prijavljenaMajka.id_majka;
-                trening.id_vrsta = (vrstaTreningaComboBox.SelectedItem as vrsta_treninga).id_vrsta;
-                trening.datum = datumDTP.Value;
-                trening.biljeske = sazetakTextBox.Text;
-
-                contex.trening.Add(trening);
-                contex.SaveChanges();
+                MessageBox.Show("Trajanje treninga mora biti brojčana vrijednost");
             }
-            this.Hide();
-            evidencijaTreningaForm.dohvatiTreninge();
+            else
+            {
+                using (var contex = new pregnancydbEntities())
+                {
+                    trening trening = new trening();
+                    trening.id_majka = prijavljenaMajka.id_majka;
+                    trening.id_vrsta = (vrstaTreningaComboBox.SelectedItem as vrsta_treninga).id_vrsta;
+                    trening.datum = datumDTP.Value;
+                    trening.biljeske = sazetakTextBox.Text;
+                    trening.vrijeme_pocetak = vrijemePocetakDTP.Value.TimeOfDay;
+                    trening.trajanje = int.Parse(trajanjeTextBox.Text);
+
+                    contex.trening.Add(trening);
+                    contex.SaveChanges();
+                }
+                this.Hide();
+                evidencijaTreningaForm.dohvatiTreninge();
+            }
         }
     }
 }

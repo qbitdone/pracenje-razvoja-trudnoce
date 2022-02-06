@@ -29,11 +29,5 @@ namespace PRT
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<majka_doktor> majka_doktor { get; set; }
-
-        public override string ToString()
-        {
-            return ime + " " + prezime;
-        }
-
     }
 }

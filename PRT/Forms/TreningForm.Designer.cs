@@ -39,13 +39,17 @@ namespace PRT.Forms
             this.sazetakTextBox = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.datumDTP = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.trajanjeTextBox = new System.Windows.Forms.TextBox();
+            this.vrijemePocetakDTP = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(26, 136);
+            this.label2.Location = new System.Drawing.Point(26, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 26;
@@ -55,7 +59,7 @@ namespace PRT.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(26, 191);
+            this.label1.Location = new System.Drawing.Point(26, 228);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 27;
@@ -64,7 +68,7 @@ namespace PRT.Forms
             // vrstaTreningaComboBox
             // 
             this.vrstaTreningaComboBox.FormattingEnabled = true;
-            this.vrstaTreningaComboBox.Location = new System.Drawing.Point(117, 133);
+            this.vrstaTreningaComboBox.Location = new System.Drawing.Point(117, 111);
             this.vrstaTreningaComboBox.Name = "vrstaTreningaComboBox";
             this.vrstaTreningaComboBox.Size = new System.Drawing.Size(179, 21);
             this.vrstaTreningaComboBox.TabIndex = 24;
@@ -72,7 +76,7 @@ namespace PRT.Forms
             // spremiButton
             // 
             this.spremiButton.BackColor = System.Drawing.Color.White;
-            this.spremiButton.Location = new System.Drawing.Point(193, 364);
+            this.spremiButton.Location = new System.Drawing.Point(190, 411);
             this.spremiButton.Name = "spremiButton";
             this.spremiButton.Size = new System.Drawing.Size(136, 54);
             this.spremiButton.TabIndex = 23;
@@ -83,7 +87,7 @@ namespace PRT.Forms
             // odustaniButton
             // 
             this.odustaniButton.BackColor = System.Drawing.Color.White;
-            this.odustaniButton.Location = new System.Drawing.Point(24, 364);
+            this.odustaniButton.Location = new System.Drawing.Point(21, 411);
             this.odustaniButton.Name = "odustaniButton";
             this.odustaniButton.Size = new System.Drawing.Size(136, 54);
             this.odustaniButton.TabIndex = 22;
@@ -104,7 +108,7 @@ namespace PRT.Forms
             // 
             // sazetakTextBox
             // 
-            this.sazetakTextBox.Location = new System.Drawing.Point(117, 186);
+            this.sazetakTextBox.Location = new System.Drawing.Point(117, 223);
             this.sazetakTextBox.Name = "sazetakTextBox";
             this.sazetakTextBox.Size = new System.Drawing.Size(179, 157);
             this.sazetakTextBox.TabIndex = 28;
@@ -114,7 +118,7 @@ namespace PRT.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(26, 164);
+            this.label3.Location = new System.Drawing.Point(26, 142);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 26;
@@ -122,17 +126,55 @@ namespace PRT.Forms
             // 
             // datumDTP
             // 
-            this.datumDTP.Location = new System.Drawing.Point(117, 160);
+            this.datumDTP.Location = new System.Drawing.Point(117, 138);
             this.datumDTP.Name = "datumDTP";
             this.datumDTP.Size = new System.Drawing.Size(179, 20);
             this.datumDTP.TabIndex = 29;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(27, 172);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 13);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Vrijeme početka:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Location = new System.Drawing.Point(27, 198);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 13);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "Trajanje treninga:";
+            // 
+            // trajanjeTextBox
+            // 
+            this.trajanjeTextBox.Location = new System.Drawing.Point(117, 194);
+            this.trajanjeTextBox.Name = "trajanjeTextBox";
+            this.trajanjeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.trajanjeTextBox.TabIndex = 31;
+            // 
+            // vrijemePocetakDTP
+            // 
+            this.vrijemePocetakDTP.Location = new System.Drawing.Point(117, 168);
+            this.vrijemePocetakDTP.Name = "vrijemePocetakDTP";
+            this.vrijemePocetakDTP.Size = new System.Drawing.Size(179, 20);
+            this.vrijemePocetakDTP.TabIndex = 32;
             // 
             // TreningForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(356, 430);
+            this.ClientSize = new System.Drawing.Size(356, 477);
+            this.Controls.Add(this.vrijemePocetakDTP);
+            this.Controls.Add(this.trajanjeTextBox);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.datumDTP);
             this.Controls.Add(this.sazetakTextBox);
             this.Controls.Add(this.label3);
@@ -161,5 +203,9 @@ namespace PRT.Forms
         private System.Windows.Forms.RichTextBox sazetakTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker datumDTP;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox trajanjeTextBox;
+        private System.Windows.Forms.DateTimePicker vrijemePocetakDTP;
     }
 }

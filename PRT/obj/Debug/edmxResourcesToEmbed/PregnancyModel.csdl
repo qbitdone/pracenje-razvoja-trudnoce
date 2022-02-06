@@ -10,6 +10,8 @@
     <Property Name="prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="spol" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="majka" Relationship="Self.public_beba_majka_id_majka_fk" FromRole="beba" ToRole="majka" />
+    <Property Name="datum_zaceca" Type="DateTime" Nullable="false" />
+    <Property Name="datum_poroda" Type="DateTime" />
   </EntityType>
   <EntityType Name="dnevnik">
     <Key>
@@ -58,8 +60,8 @@
     <NavigationProperty Name="majka_dodatak_prehrani" Relationship="Self.public_majka_dodatak_prehrani_majka_id" FromRole="majka" ToRole="majka_dodatak_prehrani" />
     <NavigationProperty Name="majka_doktor" Relationship="Self.public_majka_doktor_id_majka" FromRole="majka" ToRole="majka_doktor" />
     <NavigationProperty Name="trening" Relationship="Self.public_trening_majka_id_majka" FromRole="majka" ToRole="trening" />
-    <NavigationProperty Name="zapis_opsega" Relationship="Self.public_zapis_opsega_majka_id_majka_fk" FromRole="majka" ToRole="zapis_opsega" />
-    <NavigationProperty Name="zapis_tezine" Relationship="Self.public_zapis_tezine_majka_id_majka" FromRole="majka" ToRole="zapis_tezine" />
+    <NavigationProperty Name="zapis_opsega" Relationship="pregnancydbModel.public_zapis_opsega_majka_id_majka_fk" FromRole="majka" ToRole="zapis_opsega" />
+    <NavigationProperty Name="zapis_tezine" Relationship="pregnancydbModel.public_zapis_tezine_majka_id_majka" FromRole="majka" ToRole="zapis_tezine" />
   </EntityType>
   <EntityType Name="majka_dodatak_prehrani">
     <Key>
@@ -107,6 +109,9 @@
     <Property Name="biljeske" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="majka" Relationship="Self.public_trening_majka_id_majka" FromRole="trening" ToRole="majka" />
     <NavigationProperty Name="vrsta_treninga" Relationship="Self.public_trening_vrsta_treninga_id_vrsta_fk" FromRole="trening" ToRole="vrsta_treninga" />
+    <Property Name="vrijeme_pocetak" Type="Time" Nullable="false" />
+    <Property Name="vrijeme_kraj" Type="Time" />
+    <Property Name="trajanje" Type="Decimal" Nullable="false" Precision="29" Scale="15" />
   </EntityType>
   <EntityType Name="vrsta_treninga">
     <Key>
@@ -115,26 +120,6 @@
     <Property Name="id_vrsta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="trening" Relationship="Self.public_trening_vrsta_treninga_id_vrsta_fk" FromRole="vrsta_treninga" ToRole="trening" />
-  </EntityType>
-  <EntityType Name="zapis_opsega">
-    <Key>
-      <PropertyRef Name="id_zapis_opsega" />
-    </Key>
-    <Property Name="id_zapis_opsega" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="id_majka" Type="Int32" Nullable="false" />
-    <Property Name="opseg" Type="Double" Nullable="false" />
-    <Property Name="datum" Type="DateTime" Nullable="false" />
-    <NavigationProperty Name="majka" Relationship="Self.public_zapis_opsega_majka_id_majka_fk" FromRole="zapis_opsega" ToRole="majka" />
-  </EntityType>
-  <EntityType Name="zapis_tezine">
-    <Key>
-      <PropertyRef Name="id_zapis_tezine" />
-    </Key>
-    <Property Name="id_zapis_tezine" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="id_majka" Type="Int32" Nullable="false" />
-    <Property Name="tezina" Type="Double" Nullable="false" />
-    <Property Name="datum" Type="DateTime" Nullable="false" />
-    <NavigationProperty Name="majka" Relationship="Self.public_zapis_tezine_majka_id_majka" FromRole="zapis_tezine" ToRole="majka" />
   </EntityType>
   <Association Name="public_beba_majka_id_majka_fk">
     <End Role="majka" Type="Self.majka" Multiplicity="1" />
@@ -220,30 +205,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="public_zapis_opsega_majka_id_majka_fk">
-    <End Role="majka" Type="Self.majka" Multiplicity="1" />
-    <End Role="zapis_opsega" Type="Self.zapis_opsega" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="majka">
-        <PropertyRef Name="id_majka" />
-      </Principal>
-      <Dependent Role="zapis_opsega">
-        <PropertyRef Name="id_majka" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="public_zapis_tezine_majka_id_majka">
-    <End Role="majka" Type="Self.majka" Multiplicity="1" />
-    <End Role="zapis_tezine" Type="Self.zapis_tezine" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="majka">
-        <PropertyRef Name="id_majka" />
-      </Principal>
-      <Dependent Role="zapis_tezine">
-        <PropertyRef Name="id_majka" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="public_pregled_majka_doktor_id_majka_doktor_fk">
     <End Role="majka_doktor" Type="Self.majka_doktor" Multiplicity="1" />
     <End Role="pregled" Type="Self.pregled" Multiplicity="*" />
@@ -279,8 +240,6 @@
     <EntitySet Name="pregled" EntityType="Self.pregled" />
     <EntitySet Name="trening" EntityType="Self.trening" />
     <EntitySet Name="vrsta_treninga" EntityType="Self.vrsta_treninga" />
-    <EntitySet Name="zapis_opsega" EntityType="Self.zapis_opsega" />
-    <EntitySet Name="zapis_tezine" EntityType="Self.zapis_tezine" />
     <AssociationSet Name="public_beba_majka_id_majka_fk" Association="Self.public_beba_majka_id_majka_fk">
       <End Role="majka" EntitySet="majka" />
       <End Role="beba" EntitySet="beba" />
@@ -309,14 +268,6 @@
       <End Role="majka" EntitySet="majka" />
       <End Role="trening" EntitySet="trening" />
     </AssociationSet>
-    <AssociationSet Name="public_zapis_opsega_majka_id_majka_fk" Association="Self.public_zapis_opsega_majka_id_majka_fk">
-      <End Role="majka" EntitySet="majka" />
-      <End Role="zapis_opsega" EntitySet="zapis_opsega" />
-    </AssociationSet>
-    <AssociationSet Name="public_zapis_tezine_majka_id_majka" Association="Self.public_zapis_tezine_majka_id_majka">
-      <End Role="majka" EntitySet="majka" />
-      <End Role="zapis_tezine" EntitySet="zapis_tezine" />
-    </AssociationSet>
     <AssociationSet Name="public_pregled_majka_doktor_id_majka_doktor_fk" Association="Self.public_pregled_majka_doktor_id_majka_doktor_fk">
       <End Role="majka_doktor" EntitySet="majka_doktor" />
       <End Role="pregled" EntitySet="pregled" />
@@ -325,5 +276,61 @@
       <End Role="vrsta_treninga" EntitySet="vrsta_treninga" />
       <End Role="trening" EntitySet="trening" />
     </AssociationSet>
+    <EntitySet Name="zapis_opsega" EntityType="pregnancydbModel.zapis_opsega" />
+    <EntitySet Name="zapis_tezine" EntityType="pregnancydbModel.zapis_tezine" />
+    <AssociationSet Name="public_zapis_opsega_majka_id_majka_fk" Association="pregnancydbModel.public_zapis_opsega_majka_id_majka_fk">
+      <End Role="majka" EntitySet="majka" />
+      <End Role="zapis_opsega" EntitySet="zapis_opsega" />
+    </AssociationSet>
+    <AssociationSet Name="public_zapis_tezine_majka_id_majka" Association="pregnancydbModel.public_zapis_tezine_majka_id_majka">
+      <End Role="majka" EntitySet="majka" />
+      <End Role="zapis_tezine" EntitySet="zapis_tezine" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="zapis_opsega">
+    <Key>
+      <PropertyRef Name="id_zapis_opsega" />
+    </Key>
+    <Property Name="id_zapis_opsega" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_majka" Type="Int32" Nullable="false" />
+    <Property Name="opseg" Type="Double" Nullable="false" />
+    <Property Name="datum_pocetak" Type="DateTime" Nullable="false" />
+    <Property Name="datum_kraj" Type="DateTime" />
+    <NavigationProperty Name="majka" Relationship="pregnancydbModel.public_zapis_opsega_majka_id_majka_fk" FromRole="zapis_opsega" ToRole="majka" />
+  </EntityType>
+  <EntityType Name="zapis_tezine">
+    <Key>
+      <PropertyRef Name="id_zapis_tezine" />
+    </Key>
+    <Property Name="id_zapis_tezine" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_majka" Type="Int32" Nullable="false" />
+    <Property Name="tezina" Type="Double" Nullable="false" />
+    <Property Name="datum_pocetak" Type="DateTime" Nullable="false" />
+    <Property Name="datum_kraj" Type="DateTime" />
+    <NavigationProperty Name="majka" Relationship="pregnancydbModel.public_zapis_tezine_majka_id_majka" FromRole="zapis_tezine" ToRole="majka" />
+  </EntityType>
+  <Association Name="public_zapis_opsega_majka_id_majka_fk">
+    <End Type="pregnancydbModel.majka" Role="majka" Multiplicity="1" />
+    <End Type="pregnancydbModel.zapis_opsega" Role="zapis_opsega" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="majka">
+        <PropertyRef Name="id_majka" />
+      </Principal>
+      <Dependent Role="zapis_opsega">
+        <PropertyRef Name="id_majka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="public_zapis_tezine_majka_id_majka">
+    <End Type="pregnancydbModel.majka" Role="majka" Multiplicity="1" />
+    <End Type="pregnancydbModel.zapis_tezine" Role="zapis_tezine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="majka">
+        <PropertyRef Name="id_majka" />
+      </Principal>
+      <Dependent Role="zapis_tezine">
+        <PropertyRef Name="id_majka" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

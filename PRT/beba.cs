@@ -19,6 +19,8 @@ namespace PRT
         public string ime { get; set; }
         public string prezime { get; set; }
         public string spol { get; set; }
+        public System.DateTime datum_zaceca { get; set; }
+        public Nullable<System.DateTime> datum_poroda { get; set; }
     
         public virtual majka majka { get; set; }
     }

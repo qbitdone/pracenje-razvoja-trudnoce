@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Infrastructure;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -37,25 +38,35 @@ namespace PRT.Forms
 
         private void spremiButton_Click(object sender, EventArgs e)
         {
-            try
+            if (!Int32.TryParse(opsegTextBox.Text, out int value))
             {
-                using (var context = new pregnancydbEntities())
+                MessageBox.Show("Opseg mora biti broj");
+            } 
+            else
+            {
+                try
                 {
-                    double opseg = double.Parse(opsegTextBox.Text);
-                    zapis_opsega zapis = new zapis_opsega();
-                    zapis.datum = DateTime.Now;
-                    zapis.opseg = opseg;
-                    zapis.id_majka = prijavljenaMajka.id_majka;
+                    using (var context = new pregnancydbEntities())
+                    {
+                        double opseg = double.Parse(opsegTextBox.Text);
+                        zapis_opsega zapis = new zapis_opsega();
+                        zapis.datum_pocetak = DateTime.Now;
+                        zapis.opseg = opseg;
+                        zapis.id_majka = prijavljenaMajka.id_majka;
 
-                    context.zapis_opsega.Add(zapis);
-                    context.SaveChanges();
+                        context.zapis_opsega.Add(zapis);
+                        context.SaveChanges();
+                    }
+                    evidencijaOpsegaForm.dohvatiOpsege();
+                    this.Hide();
                 }
-                evidencijaOpsegaForm.dohvatiOpsege();
-                this.Hide();
-            }
-            catch
-            {
-                MessageBox.Show("Opseg mora biti brojčana vrijednost");
+                catch (DbUpdateException ex)
+                {
+                    if (ex.InnerException != null && ex.InnerException.InnerException != null)
+                    {
+                        MessageBox.Show(ex.InnerException.InnerException.Message);
+                    }
+                }
             }
         }
     }

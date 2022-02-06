@@ -35,10 +35,12 @@ namespace PRT.Forms
             this.obrisiZapisButton = new System.Windows.Forms.Button();
             this.prikazTreningaDataGridView = new System.Windows.Forms.DataGridView();
             this.moTrackerLabel = new System.Windows.Forms.Label();
+            this.treningBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vrstatreningaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.biljeskeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.treningBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vrijeme_pocetak = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vrijeme_kraj = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.prikazTreningaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treningBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -75,7 +77,9 @@ namespace PRT.Forms
             this.prikazTreningaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.datumDataGridViewTextBoxColumn,
             this.vrstatreningaDataGridViewTextBoxColumn,
-            this.biljeskeDataGridViewTextBoxColumn});
+            this.biljeskeDataGridViewTextBoxColumn,
+            this.vrijeme_pocetak,
+            this.vrijeme_kraj});
             this.prikazTreningaDataGridView.DataSource = this.treningBindingSource;
             this.prikazTreningaDataGridView.Location = new System.Drawing.Point(38, 106);
             this.prikazTreningaDataGridView.Name = "prikazTreningaDataGridView";
@@ -93,6 +97,10 @@ namespace PRT.Forms
             this.moTrackerLabel.Size = new System.Drawing.Size(390, 64);
             this.moTrackerLabel.TabIndex = 7;
             this.moTrackerLabel.Text = "Evidencija treninga";
+            // 
+            // treningBindingSource
+            // 
+            this.treningBindingSource.DataSource = typeof(PRT.trening);
             // 
             // datumDataGridViewTextBoxColumn
             // 
@@ -117,9 +125,19 @@ namespace PRT.Forms
             this.biljeskeDataGridViewTextBoxColumn.ReadOnly = true;
             this.biljeskeDataGridViewTextBoxColumn.Width = 68;
             // 
-            // treningBindingSource
+            // vrijeme_pocetak
             // 
-            this.treningBindingSource.DataSource = typeof(PRT.trening);
+            this.vrijeme_pocetak.DataPropertyName = "vrijeme_pocetak";
+            this.vrijeme_pocetak.HeaderText = "Vrijeme Početak";
+            this.vrijeme_pocetak.Name = "vrijeme_pocetak";
+            this.vrijeme_pocetak.ReadOnly = true;
+            // 
+            // vrijeme_kraj
+            // 
+            this.vrijeme_kraj.DataPropertyName = "vrijeme_kraj";
+            this.vrijeme_kraj.HeaderText = "Vrijeme Kraj";
+            this.vrijeme_kraj.Name = "vrijeme_kraj";
+            this.vrijeme_kraj.ReadOnly = true;
             // 
             // EvidencijaTreningaForm
             // 
@@ -151,5 +169,7 @@ namespace PRT.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vrstatreningaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn biljeskeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vrijeme_pocetak;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vrijeme_kraj;
     }
 }

@@ -15,8 +15,6 @@
         <EntityTypeShape EntityType="pregnancydbModel.pregled" Width="1.5" PointX="8.25" PointY="10.875" IsExpanded="true" />
         <EntityTypeShape EntityType="pregnancydbModel.trening" Width="1.5" PointX="6" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="pregnancydbModel.vrsta_treninga" Width="1.5" PointX="3.75" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="pregnancydbModel.zapis_opsega" Width="1.5" PointX="3" PointY="22" IsExpanded="true" />
-        <EntityTypeShape EntityType="pregnancydbModel.zapis_tezine" Width="1.5" PointX="3" PointY="24.75" IsExpanded="true" />
         <AssociationConnector Association="pregnancydbModel.public_beba_majka_id_majka_fk" ManuallyRouted="false" />
         <AssociationConnector Association="pregnancydbModel.public_dnevnik_majka_id_majka_fk" ManuallyRouted="false" />
         <AssociationConnector Association="pregnancydbModel.public_majka_dodatak_prehrani_dodatak_id" ManuallyRouted="false" />
@@ -24,10 +22,12 @@
         <AssociationConnector Association="pregnancydbModel.public_majka_dodatak_prehrani_majka_id" ManuallyRouted="false" />
         <AssociationConnector Association="pregnancydbModel.public_majka_doktor_id_majka" ManuallyRouted="false" />
         <AssociationConnector Association="pregnancydbModel.public_trening_majka_id_majka" ManuallyRouted="false" />
-        <AssociationConnector Association="pregnancydbModel.public_zapis_opsega_majka_id_majka_fk" ManuallyRouted="false" />
-        <AssociationConnector Association="pregnancydbModel.public_zapis_tezine_majka_id_majka" ManuallyRouted="false" />
         <AssociationConnector Association="pregnancydbModel.public_pregled_majka_doktor_id_majka_doktor_fk" ManuallyRouted="false" />
         <AssociationConnector Association="pregnancydbModel.public_trening_vrsta_treninga_id_vrsta_fk" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="pregnancydbModel.zapis_opsega" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="pregnancydbModel.zapis_tezine" Width="1.5" PointX="3" PointY="20.625" />
+        <AssociationConnector Association="pregnancydbModel.public_zapis_opsega_majka_id_majka_fk" />
+        <AssociationConnector Association="pregnancydbModel.public_zapis_tezine_majka_id_majka" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

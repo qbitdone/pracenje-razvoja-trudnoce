@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Infrastructure;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -39,27 +40,39 @@ namespace PRT.Forms
 
         private void spremiButton_Click(object sender, EventArgs e)
         {
-            try
+            if (imeTextBox.Text != "" && prezimeTextBox.Text != "" && spolTextBox.Text != "")
             {
-                using (var contex = new pregnancydbEntities())
+                try
                 {
-                    beba beba = new beba();
+                    using (var contex = new pregnancydbEntities())
+                    {
+                        beba beba = new beba();
 
-                    beba.ime = imeTextBox.Text;
-                    beba.prezime = prezimeTextBox.Text;
-                    beba.spol = spolTextBox.Text;
-                    beba.id_majka = prijavljenaMajka.id_majka;
+                        beba.ime = imeTextBox.Text;
+                        beba.prezime = prezimeTextBox.Text;
+                        beba.spol = spolTextBox.Text;
+                        beba.id_majka = prijavljenaMajka.id_majka;
+                        beba.datum_zaceca = datumDTP.Value;
 
-                    contex.beba.Add(beba);
-                    contex.SaveChanges();
+                        contex.beba.Add(beba);
+                        contex.SaveChanges();
+                    }
+                    this.Hide();
+                    informacijeOBebamaForm.dohvatiBebe();
                 }
-                this.Hide();
-                informacijeOBebamaForm.dohvatiBebe();
+                catch (DbUpdateException ex)
+                {
+                    if (ex.InnerException != null && ex.InnerException.InnerException != null)
+                    {
+                        MessageBox.Show(ex.InnerException.InnerException.Message);
+                    }
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show("Spol moze biti musko ili zensko");
+                MessageBox.Show("Unesite podatke u sva polja");
             }
+            
         }
     }
 }

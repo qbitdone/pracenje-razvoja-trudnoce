@@ -67,5 +67,28 @@ namespace PRT.Forms
 
             dohvatiTezine();
         }
+
+        private void dohvatiAkutalniButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var contex = new pregnancydbEntities())
+                {
+
+                    var query = from k in contex.zapis_tezine
+                                where k.id_majka == prijavljenaMajka.id_majka && k.datum_kraj == null
+                                select k;
+
+                    zapis_tezine tezina = query.Single();
+
+                    MessageBox.Show($"Trenutni aktualan zapis opsega je zabiljezen na dan {tezina.datum_pocetak.ToShortDateString()} i iznosi {tezina.tezina} kilograma");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Trenutno nema aktualnog zapisa tezine");
+            }
+        }
     }
 }

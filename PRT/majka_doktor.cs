@@ -30,11 +30,5 @@ namespace PRT
         public virtual majka majka { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<pregled> pregled { get; set; }
-
-        /*
-        public override string ToString()
-        {
-            return doktor.ime + " " + doktor.prezime;
-        } */
     }
 }

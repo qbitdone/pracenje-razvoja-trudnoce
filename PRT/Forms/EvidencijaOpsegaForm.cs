@@ -68,5 +68,28 @@ namespace PRT.Forms
             dohvatiOpsege();
 
         }
+
+        private void dohvatiAkutalniButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var contex = new pregnancydbEntities())
+                {
+
+                    var query = from k in contex.zapis_opsega
+                                where k.id_majka == prijavljenaMajka.id_majka && k.datum_kraj == null
+                                select k;
+
+                    zapis_opsega opseg = query.Single();
+
+                    MessageBox.Show($"Trenutni aktualan zapis opsega je zabiljezen na dan {opseg.datum_pocetak.ToShortDateString()} i iznosi {opseg.opseg} centimetara");
+
+                }
+            }
+            catch 
+            {
+                MessageBox.Show("Trenutno nema aktualnog zapisa opsega");
+            }
+        }
     }
 }

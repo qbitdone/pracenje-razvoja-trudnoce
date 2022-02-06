@@ -35,9 +35,10 @@ namespace PRT.Forms
             this.obrisiZapisButton = new System.Windows.Forms.Button();
             this.prikazOpsegaDataGridView = new System.Windows.Forms.DataGridView();
             this.moTrackerLabel = new System.Windows.Forms.Label();
-            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datum_pocetak = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.opsegDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zapisopsegaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dohvatiAkutalniButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.prikazOpsegaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zapisopsegaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +73,7 @@ namespace PRT.Forms
             this.prikazOpsegaDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.prikazOpsegaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.prikazOpsegaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.datumDataGridViewTextBoxColumn,
+            this.datum_pocetak,
             this.opsegDataGridViewTextBoxColumn});
             this.prikazOpsegaDataGridView.DataSource = this.zapisopsegaBindingSource;
             this.prikazOpsegaDataGridView.Location = new System.Drawing.Point(38, 106);
@@ -92,12 +93,12 @@ namespace PRT.Forms
             this.moTrackerLabel.TabIndex = 7;
             this.moTrackerLabel.Text = "Evidencija Opsega";
             // 
-            // datumDataGridViewTextBoxColumn
+            // datum_pocetak
             // 
-            this.datumDataGridViewTextBoxColumn.DataPropertyName = "datum";
-            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
-            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
-            this.datumDataGridViewTextBoxColumn.ReadOnly = true;
+            this.datum_pocetak.DataPropertyName = "datum_pocetak";
+            this.datum_pocetak.HeaderText = "Datum Zapisa";
+            this.datum_pocetak.Name = "datum_pocetak";
+            this.datum_pocetak.ReadOnly = true;
             // 
             // opsegDataGridViewTextBoxColumn
             // 
@@ -110,12 +111,24 @@ namespace PRT.Forms
             // 
             this.zapisopsegaBindingSource.DataSource = typeof(PRT.zapis_opsega);
             // 
+            // dohvatiAkutalniButton
+            // 
+            this.dohvatiAkutalniButton.BackColor = System.Drawing.Color.White;
+            this.dohvatiAkutalniButton.Location = new System.Drawing.Point(120, 370);
+            this.dohvatiAkutalniButton.Name = "dohvatiAkutalniButton";
+            this.dohvatiAkutalniButton.Size = new System.Drawing.Size(136, 54);
+            this.dohvatiAkutalniButton.TabIndex = 11;
+            this.dohvatiAkutalniButton.Text = "Dohvati Aktulani Zapis";
+            this.dohvatiAkutalniButton.UseVisualStyleBackColor = false;
+            this.dohvatiAkutalniButton.Click += new System.EventHandler(this.dohvatiAkutalniButton_Click);
+            // 
             // EvidencijaOpsegaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(395, 365);
+            this.ClientSize = new System.Drawing.Size(395, 436);
+            this.Controls.Add(this.dohvatiAkutalniButton);
             this.Controls.Add(this.dodajZapisButton);
             this.Controls.Add(this.obrisiZapisButton);
             this.Controls.Add(this.prikazOpsegaDataGridView);
@@ -138,6 +151,8 @@ namespace PRT.Forms
         private System.Windows.Forms.Label moTrackerLabel;
         private System.Windows.Forms.BindingSource zapisopsegaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datum_pocetak;
         private System.Windows.Forms.DataGridViewTextBoxColumn opsegDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button dohvatiAkutalniButton;
     }
 }

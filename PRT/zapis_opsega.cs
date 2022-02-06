@@ -17,7 +17,8 @@ namespace PRT
         public int id_zapis_opsega { get; set; }
         public int id_majka { get; set; }
         public double opseg { get; set; }
-        public System.DateTime datum { get; set; }
+        public System.DateTime datum_pocetak { get; set; }
+        public Nullable<System.DateTime> datum_kraj { get; set; }
     
         public virtual majka majka { get; set; }
     }

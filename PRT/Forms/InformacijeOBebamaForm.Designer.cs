@@ -34,11 +34,13 @@ namespace PRT.Forms
             this.dodajZapisButton = new System.Windows.Forms.Button();
             this.obrisiZapisButton = new System.Windows.Forms.Button();
             this.prikazBebaDataGridView = new System.Windows.Forms.DataGridView();
+            this.bebaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.moTrackerLabel = new System.Windows.Forms.Label();
             this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.spolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bebaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.datum_zaceca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datum_poroda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.prikazBebaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bebaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -75,13 +77,19 @@ namespace PRT.Forms
             this.prikazBebaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.imeDataGridViewTextBoxColumn,
             this.prezimeDataGridViewTextBoxColumn,
-            this.spolDataGridViewTextBoxColumn});
+            this.spolDataGridViewTextBoxColumn,
+            this.datum_zaceca,
+            this.datum_poroda});
             this.prikazBebaDataGridView.DataSource = this.bebaBindingSource;
             this.prikazBebaDataGridView.Location = new System.Drawing.Point(31, 106);
             this.prikazBebaDataGridView.Name = "prikazBebaDataGridView";
             this.prikazBebaDataGridView.ReadOnly = true;
             this.prikazBebaDataGridView.Size = new System.Drawing.Size(300, 150);
             this.prikazBebaDataGridView.TabIndex = 12;
+            // 
+            // bebaBindingSource
+            // 
+            this.bebaBindingSource.DataSource = typeof(PRT.beba);
             // 
             // moTrackerLabel
             // 
@@ -115,9 +123,19 @@ namespace PRT.Forms
             this.spolDataGridViewTextBoxColumn.Name = "spolDataGridViewTextBoxColumn";
             this.spolDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // bebaBindingSource
+            // datum_zaceca
             // 
-            this.bebaBindingSource.DataSource = typeof(PRT.beba);
+            this.datum_zaceca.DataPropertyName = "datum_zaceca";
+            this.datum_zaceca.HeaderText = "Datum Začeća";
+            this.datum_zaceca.Name = "datum_zaceca";
+            this.datum_zaceca.ReadOnly = true;
+            // 
+            // datum_poroda
+            // 
+            this.datum_poroda.DataPropertyName = "datum_poroda";
+            this.datum_poroda.HeaderText = "Datum Poroda";
+            this.datum_poroda.Name = "datum_poroda";
+            this.datum_poroda.ReadOnly = true;
             // 
             // InformacijeOBebamaForm
             // 
@@ -149,5 +167,7 @@ namespace PRT.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn imeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prezimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn spolDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datum_zaceca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datum_poroda;
     }
 }

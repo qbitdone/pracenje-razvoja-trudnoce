@@ -4,6 +4,8 @@
     <EntitySetMapping Name="beba">
       <EntityTypeMapping TypeName="pregnancydbModel.beba">
         <MappingFragment StoreEntitySet="beba">
+          <ScalarProperty Name="datum_poroda" ColumnName="datum_poroda" />
+          <ScalarProperty Name="datum_zaceca" ColumnName="datum_zaceca" />
           <ScalarProperty Name="id_beba" ColumnName="id_beba" />
           <ScalarProperty Name="id_majka" ColumnName="id_majka" />
           <ScalarProperty Name="ime" ColumnName="ime" />
@@ -91,6 +93,9 @@
     <EntitySetMapping Name="trening">
       <EntityTypeMapping TypeName="pregnancydbModel.trening">
         <MappingFragment StoreEntitySet="trening">
+          <ScalarProperty Name="trajanje" ColumnName="trajanje" />
+          <ScalarProperty Name="vrijeme_kraj" ColumnName="vrijeme_kraj" />
+          <ScalarProperty Name="vrijeme_pocetak" ColumnName="vrijeme_pocetak" />
           <ScalarProperty Name="id_trening" ColumnName="id_trening" />
           <ScalarProperty Name="id_vrsta" ColumnName="id_vrsta" />
           <ScalarProperty Name="id_majka" ColumnName="id_majka" />
@@ -110,20 +115,22 @@
     <EntitySetMapping Name="zapis_opsega">
       <EntityTypeMapping TypeName="pregnancydbModel.zapis_opsega">
         <MappingFragment StoreEntitySet="zapis_opsega">
-          <ScalarProperty Name="id_zapis_opsega" ColumnName="id_zapis_opsega" />
-          <ScalarProperty Name="id_majka" ColumnName="id_majka" />
+          <ScalarProperty Name="datum_kraj" ColumnName="datum_kraj" />
+          <ScalarProperty Name="datum_pocetak" ColumnName="datum_pocetak" />
           <ScalarProperty Name="opseg" ColumnName="opseg" />
-          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="id_majka" ColumnName="id_majka" />
+          <ScalarProperty Name="id_zapis_opsega" ColumnName="id_zapis_opsega" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="zapis_tezine">
       <EntityTypeMapping TypeName="pregnancydbModel.zapis_tezine">
         <MappingFragment StoreEntitySet="zapis_tezine">
-          <ScalarProperty Name="id_zapis_tezine" ColumnName="id_zapis_tezine" />
-          <ScalarProperty Name="id_majka" ColumnName="id_majka" />
+          <ScalarProperty Name="datum_kraj" ColumnName="datum_kraj" />
+          <ScalarProperty Name="datum_pocetak" ColumnName="datum_pocetak" />
           <ScalarProperty Name="tezina" ColumnName="tezina" />
-          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="id_majka" ColumnName="id_majka" />
+          <ScalarProperty Name="id_zapis_tezine" ColumnName="id_zapis_tezine" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
